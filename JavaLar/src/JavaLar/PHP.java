@@ -1,17 +1,59 @@
 package JavaLar;
 
-public class PHP extends Planetas{
+public class PHP extends Planetas {
+
+	private int orbitaPermitida[][];
+	private int indicePosAtual;
 
 	public PHP(int posicaoX, int posicaoY, int velocidade, int horas) {
-		super(velocidade, horas, horas, horas);
-		
-		setPosicao(new int[] {8,12});
+		super(8, 12, velocidade, horas);
+
+		preencherOrbita();
+		setVelocidade(velocidade);
+		setPosicao(new int[] { 8, 12 });
 	}
 
-	
-	public void mover(int instantes) {
-		// TODO Auto-generated method stub
-		
+	public void preencherOrbita() {
+
+		int x = 8;
+		int y = 12;
+
+		orbitaPermitida = new int[32][2];
+
+		for (int i = 0; i < 32; i++) {
+
+			orbitaPermitida[i][0] = x;
+			orbitaPermitida[i][1] = y;
+
+			if (i < 4) {
+
+				x--;
+
+			} else if (i < 12) {
+
+				y--;
+
+			} else if (i < 20) {
+
+				x++;
+			} else if (i < 28) {
+
+				y++;
+
+			} else {
+				x--;
+
+			}
+
+		}
+
 	}
-	
+
+	public void mover(int instantes) {
+
+		indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
+		setPosicao(orbitaPermitida[indicePosAtual]);
+
+	}
+
 }
