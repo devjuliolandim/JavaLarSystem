@@ -51,10 +51,8 @@ public class PHP extends Planetas {
 
 	public void mover(int instantes) {
 
-		for (int i = 0; i < instantes; i++) {
-			indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
-			setPosicao(orbitaPermitida[indicePosAtual]);
-		}
+		indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
+		setPosicao(orbitaPermitida[indicePosAtual]);
 
 	}
 

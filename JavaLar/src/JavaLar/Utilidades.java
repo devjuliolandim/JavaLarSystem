@@ -23,4 +23,29 @@ public class Utilidades {
 		return opcao;
 	}
 
+
+	public static void show(int[] python, int[]javascript, int[] ROR, int[]php, int[]csharp, int[]cplusplus, int[]c) {
+		
+		System.out.println("A posição atual do Planeta JavaScript é (" + javascript[0] + " , " + javascript[1] + ")" );
+		System.out.println("A posição atual do Planeta Python é: (" + python[0] + " , " + python[1]+ ")");
+		System.out.println("A posição atual do Planeta Ruby On Rails é (" +ROR[0] + " , " + ROR[1] + ")");
+		System.out.println("A posição atual do Planeta PHP é (" +php[0] + " , " + php[1] + ")");
+		System.out.println("A posição atual do Planeta C# é (" +csharp[0] + " , " + csharp[1] + ")");
+		System.out.println("A posição atual do Planeta C++ é (" +cplusplus[0] + " , " + cplusplus[1] + ")");
+		System.out.println("A posição atual do Planeta C é (" +c[0] + " , " + c[1] + ")");
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

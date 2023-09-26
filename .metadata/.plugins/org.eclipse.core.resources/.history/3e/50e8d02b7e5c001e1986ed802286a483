@@ -8,7 +8,7 @@ public class CPlusPlus extends Planetas{
 	
 	
 	public CPlusPlus(int posicaoX, int posicaoY, int velocidade, int horas) {
-		super(posicaoX, posicaoY, velocidade, horas);
+		super(posicaoX, posicaoY, horas, horas);
 		
 		preencherOrbita();
 		setVelocidade(velocidade);
@@ -56,10 +56,9 @@ public class CPlusPlus extends Planetas{
 	public void mover(int instantes) {
 
 		
-		for (int i = 0; i < instantes; i++) {
-			indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
-			setPosicao(orbitaPermitida[indicePosAtual]);
-		}
+		indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
+		setPosicao(orbitaPermitida[indicePosAtual]);
+		
 		
 	}
 	
