@@ -1,0 +1,51 @@
+package JavaLar;
+
+public class Python extends Planetas {
+
+	private int[][] orbitaPermitida;
+	private int indicePosicaoAtual = 0;
+
+	public Python(int posicaoX, int posicaoY, int velocidade, int horas) {
+		super(8, 9, 4, 0);
+		
+		preencherOrbita();
+		setVelocidade(velocidade);
+		setPosicao(orbitaPermitida[0]);
+	}
+	
+	
+	private void preencherOrbita() {
+		int tamanhoOrbita = 8;
+		orbitaPermitida = new int[tamanhoOrbita][2];
+		
+		for (int i = 0; i < tamanhoOrbita; i++) {
+			
+			orbitaPermitida[i][0] = 8 + (i%2);
+			orbitaPermitida[i][0] = 9 - (i/2);
+		}
+		
+		
+		
+	}
+	
+	
+
+	public int horasPassadas(int instantes) {
+
+		horas = 24 * instantes;
+
+		return horas;
+	}
+
+	@Override
+	public void mover(int instantes) {
+
+		for (int i = 0; i< instantes; i++) {
+			
+			indicePosicaoAtual = (indicePosicaoAtual + velocidade) % orbitaPermitida.length;
+			setPosicao(orbitaPermitida[indicePosicaoAtual]);
+		}
+		
+	}
+
+}

@@ -1,0 +1,44 @@
+package JavaLar;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void show(int[] python, int[]javascript) {
+		
+		System.out.println("A posição atual do Planeta JavaScript é (" + javascript[0] + " , " + javascript[1] + ")" );
+		System.out.println("A posição atual do Planeta Python é: (" + python[0] + " , " + python[1]+ ")");
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		JavaScript javaScript = new JavaScript(8, 10, 3, 0);
+		Python python = new Python(8,9,4,0);
+		
+		System.out.println("Digte os instantes:");
+		int instantes = scanner.nextInt();
+		
+		python.mover(instantes);
+		javaScript.mover(instantes);
+		
+		
+		int[] posicaoJS = javaScript.getPosicao();
+		int[] posicaoPython = python.getPosicao(); 
+		
+		show(posicaoPython, posicaoJS);
+		
+		
+		
+		
+		scanner.close();
+	}
+
+}

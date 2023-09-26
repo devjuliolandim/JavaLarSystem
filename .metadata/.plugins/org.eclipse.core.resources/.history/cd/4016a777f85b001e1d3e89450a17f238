@@ -1,0 +1,11 @@
+package JavaLar;
+
+public class CPlusPlus extends Planetas{
+
+	public CPlusPlus(int velocidade, int horas) {
+		super(velocidade, horas);
+		
+		setPosicao(new int[] {8,14});
+	}
+	
+}

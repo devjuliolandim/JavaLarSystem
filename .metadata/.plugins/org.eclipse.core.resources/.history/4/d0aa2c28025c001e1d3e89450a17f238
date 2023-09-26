@@ -1,0 +1,28 @@
+package JavaLar;
+
+public class RubyOnRails extends Planetas{
+
+	int orbitaPermitida[][] = {
+			
+				
+			
+	};
+	
+	
+	
+	
+	public RubyOnRails(int posicaoX, int posicaoY, int velocidade, int horas) {
+		super(velocidade, horas, horas, horas);
+		
+		setPosicao(new int[] {8,11});
+	}
+
+	@Override
+	public void mover(int instantes) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+}

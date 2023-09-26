@@ -1,0 +1,33 @@
+package JavaLar;
+
+public class JavaScript extends Planetas {
+
+	int[][] orbitaPermitida = {
+
+			{ 8, 10 }, { 7, 10 }, { 6, 10 }, { 6, 9 }, { 6, 8 }, { 6, 7 }, { 6, 6 }, { 7, 6 }, { 8, 6 }, { 9, 6 },
+			{ 10, 6 }, { 10, 7 }, { 10, 8 }, { 10, 9 }, { 10, 10 }, { 9, 10 }
+
+	};
+
+	int indicePosicaoAtual = 0;
+
+	public JavaScript(int posicaoX, int PosicaoY, int velocidade, int horas) {
+		super(8, 10, velocidade, horas);
+
+		setVelocidade(velocidade);
+		setPosicao(new int[] { 8, 10 });
+	}
+
+	@Override
+	public void mover(int instantes) {
+
+		for (int i = 0; i < instantes; i++) {
+
+			indicePosicaoAtual = (indicePosicaoAtual + velocidade) % orbitaPermitida.length;
+			setPosicao(orbitaPermitida[indicePosicaoAtual]);
+
+		}
+
+	}
+
+}

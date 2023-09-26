@@ -1,0 +1,14 @@
+package JavaLar;
+
+public class Python extends Planetas {
+
+	public Python( int velocidade, int horas) {
+		super( velocidade, horas);
+	}
+	
+	
+	
+	
+	
+	
+}

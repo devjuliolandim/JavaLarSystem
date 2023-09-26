@@ -1,0 +1,13 @@
+package JavaLar;
+
+public class RubyOnRails extends Planetas{
+
+	public RubyOnRails(int velocidade, int horas) {
+		super(velocidade, horas);
+		
+		setPosicao(new int[] {8,11});
+	}
+	
+	
+	
+}

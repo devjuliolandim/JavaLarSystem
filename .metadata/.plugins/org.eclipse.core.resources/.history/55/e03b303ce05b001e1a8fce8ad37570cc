@@ -1,0 +1,27 @@
+package JavaLar;
+
+public class Python extends Planetas {
+
+	public Python(int velocidade, int horas) {
+		super(velocidade, horas);
+		
+		setPosicao(new int[] {8,9});
+	}
+	
+	
+	public int horasPassadas(int instantes) {
+		
+		horas = 24 * instantes;
+		
+		return horas;
+	}
+	
+	
+	
+	public void movimento(int instantes) {
+		
+		
+		
+		
+	}
+}
