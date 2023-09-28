@@ -5,17 +5,24 @@ public abstract class Planetas {
 	protected int[] posicao = new int[2];
 	protected int velocidade;
 	protected int horas;
-	
-	
-	public Planetas(int posicaoX, int posicaoY,  int velocidade, int horas) {
+
+	public Planetas(int posicaoX, int posicaoY, int velocidade, int horas) {
 		this.posicao[0] = posicaoX;
-		this.posicao[0] = posicaoY;
+		this.posicao[1] = posicaoY;
 		this.velocidade = velocidade;
 		this.horas = horas;
 	}
 
 	public int[] getPosicao() {
 		return posicao;
+	}
+
+	public int getPosicaoX() {
+		return this.posicao[0];
+	}
+
+	public int getPosicaoY() {
+		return this.posicao[1];
 	}
 
 	public void setPosicao(int[] posicao) {
@@ -37,10 +44,7 @@ public abstract class Planetas {
 	public void setHoras(int horas) {
 		this.horas = horas;
 	}
-	
+
 	public abstract void mover(int instantes);
-	
-	
-	
 
 }

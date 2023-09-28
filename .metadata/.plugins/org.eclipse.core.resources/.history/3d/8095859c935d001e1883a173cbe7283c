@@ -1,0 +1,21 @@
+package JavaLar;
+
+public class Calculos {
+
+	public static void Hemisferios(String planeta, int[] posicao) {
+
+		String hemisferio = null;
+		
+		if(posicao[1]>8) {
+			
+			hemisferio = "Norte";
+		}else if(posicao[1]<8) {
+			
+			hemisferio = "Sul";
+		}
+		
+		
+		System.out.println("O planeta" + planeta + " está no hemisfério" + hemisferio);
+		
+	}
+}

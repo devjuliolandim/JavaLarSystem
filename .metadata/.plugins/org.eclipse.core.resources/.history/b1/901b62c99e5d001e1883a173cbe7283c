@@ -1,0 +1,70 @@
+package JavaLar;
+
+import java.util.Iterator;
+
+public class Calculos {
+
+	public static void hemisferios(String planeta, int[] posicao) {
+
+		String hemisferio = null;
+
+		if (posicao[1] > 8) {
+
+			hemisferio = "Norte";
+		} else if (posicao[1] < 8) {
+
+			hemisferio = "Sul";
+		}
+
+		System.out.println("O planeta " + planeta + " está no Hemisfério " + hemisferio);
+
+	}
+
+	public static void alinhamentosEixoX(Python p, JavaScript js, RubyOnRails ror, PHP php, CSharp cs, CPlusPlus cp,
+			C c) {
+
+		int pX = p.getPosicaoX();
+		int jsX = js.getPosicaoX();
+		int rorX = ror.getPosicaoX();
+		int phpX = php.getPosicaoX();
+		int csX = cs.getPosicaoX();
+		int cpX = js.getPosicaoX();
+		int cX = js.getPosicaoX();
+
+		int[] posicoes = new int[7];
+
+		posicoes[0] = pX;
+		posicoes[1] = jsX;
+		posicoes[2] = rorX;
+		posicoes[3] = phpX;
+		posicoes[4] = csX;
+		posicoes[5] = cpX;
+		posicoes[6] = cX;
+
+		int alinhamentos = 0;
+
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 7; j++) {
+
+				if (posicoes[i] == posicoes[j]) {
+
+					alinhamentos++;
+				}
+
+			}
+
+		}
+
+		if (alinhamentos > 0) {
+
+			System.out.println("Há alinhamentos de planetas na vertical");
+
+		}
+
+	}
+
+	public static void DistanciaArea() {
+
+	}
+
+}

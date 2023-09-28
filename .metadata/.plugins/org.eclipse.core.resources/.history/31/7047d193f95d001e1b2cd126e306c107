@@ -1,0 +1,22 @@
+package JavaLar;
+
+public abstract class OutrosPersonagens {
+
+	protected int posicao[] = new int[2];
+
+	public OutrosPersonagens(int posicaoX, int posicaoY, int[] posicao) {
+		this.posicao = posicao;
+		this.posicao[0] = posicaoX;
+		this.posicao[1] = posicaoY;
+	}
+
+	public int[] getPosicao() {
+		return posicao;
+	}
+
+	public void setPosicao(int[] posicao) {
+		this.posicao = posicao;
+	}
+	
+	
+}

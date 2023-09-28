@@ -1,0 +1,125 @@
+package JavaLar;
+
+import java.util.Iterator;
+
+public class Calculos {
+
+	public static void hemisferios(String planeta, int[] posicao) {
+
+		String hemisferio = null;
+
+		if (posicao[1] > 8) {
+
+			hemisferio = "Norte";
+		} else if (posicao[1] < 8) {
+
+			hemisferio = "Sul";
+		}
+
+		System.out.println("O planeta " + planeta + " está no Hemisfério " + hemisferio);
+
+	}
+
+	public static void alinhamentosEixoX(Python p, JavaScript js, RubyOnRails ror, PHP php, CSharp cs, CPlusPlus cp, C c) {
+
+		int pX = p.getPosicaoX();
+		int jsX = js.getPosicaoX();
+		int rorX = ror.getPosicaoX();
+		int phpX = php.getPosicaoX();
+		int csX = cs.getPosicaoX();
+		int cpX = js.getPosicaoX();
+		int cX = js.getPosicaoX();
+
+		int[] posicoes = new int[7];
+
+		posicoes[0] = pX;
+		posicoes[1] = jsX;
+		posicoes[2] = rorX;
+		posicoes[3] = phpX;
+		posicoes[4] = csX;
+		posicoes[5] = cpX;
+		posicoes[6] = cX;
+
+		int alinhamentos = 0;
+
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 7; j++) {
+
+				if (posicoes[i] == posicoes[j]) {
+
+					alinhamentos++;
+				}
+
+			}
+
+		}
+
+		if (alinhamentos > 0) {
+
+			System.out.println("Há alinhamentos de planetas na vertical");
+
+		}
+
+	}
+
+	public static void DistanciaArea() {
+
+	}
+	
+	
+	
+	public static void numeroDePlanetas(Python p, JavaScript js, RubyOnRails ror, PHP php, CSharp cs, CPlusPlus cp, C c) {
+		
+		int[] planetas = {p.getPosicaoY(), js.getPosicaoY(), ror.getPosicaoY(), php.getPosicaoY(), cs.getPosicaoY(), cp.getPosicaoY(), c.getPosicaoY()};
+		
+		int quantidadeNorte = 0;
+		
+		int quantidadeSul = 0;
+		
+		
+		for (int i = 0; i < planetas.length; i++) {
+			System.out.println(planetas[i]);
+		}
+		
+		/*
+		for (int i = 0; i < planetas.length; i++) {
+			
+			if(planetas[i] > 8) {
+				
+				quantidadeNorte++;
+			}else if(planetas[i]<8) {
+				
+				quantidadeSul++;
+			}
+			
+		}
+		
+		
+		String Norte = "Norte";
+		String Sul = "Sul";
+		
+		imprimirNumeroDePlanetas(Norte, quantidadeNorte);
+		imprimirNumeroDePlanetas(Sul, quantidadeSul);*/
+		
+	}
+
+	
+	
+	public static void imprimirNumeroDePlanetas(String direcao, int quantidade) {
+		
+		if(quantidade > 0 && quantidade == 1) {
+			
+			System.out.println("Existe 1 único planeta ao " + direcao + " de Java");
+			
+		}else if(quantidade > 1) {
+			
+			System.out.println("Existem " + quantidade + " planetas ao " + direcao + " de Java");
+		}else {
+			
+			System.out.println("Não existe nenhum planeta ao " + direcao + " de Java!");
+		}
+		
+		
+	}
+	
+}
