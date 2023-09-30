@@ -24,7 +24,6 @@ public class C extends Planetas {
 
 			orbitaPermitida[i][0] = x;
 			orbitaPermitida[i][1] = y;
-
 			if (i < 7) {
 
 				x--;
@@ -44,9 +43,9 @@ public class C extends Planetas {
 				x--;
 
 			}
-
+			
 		}
-
+		
 	}
 
 	public void mover(int instantes) {

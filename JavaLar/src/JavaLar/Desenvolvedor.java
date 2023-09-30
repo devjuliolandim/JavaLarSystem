@@ -13,7 +13,7 @@ public class Desenvolvedor extends OutrosPersonagens {
 	public static void criarDesenvolvedores(int qntddevs, ArrayList<Desenvolvedor> devs, ArrayList<Bug> bugs) {
 		Random random = new Random();
 
-		boolean[][] posOcupadas = new boolean[15][15];
+		boolean[][] posOcupadas = new boolean[16][16];
 
 		int pX = 0;
 		int pY = 0;
@@ -30,8 +30,8 @@ public class Desenvolvedor extends OutrosPersonagens {
 		for (int i = 0; i < qntddevs; i++) {
 
 			do {
-				pX = random.nextInt(15);
-				pY = random.nextInt(15);
+				pX = random.nextInt(15)+1;
+				pY = random.nextInt(15)+1;
 			} while (posOcupadas[pX][pY] == true);
 
 			Desenvolvedor desenvolvedor = new Desenvolvedor(pX, pY);

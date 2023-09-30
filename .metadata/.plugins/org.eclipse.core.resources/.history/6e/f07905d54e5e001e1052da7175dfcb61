@@ -1,9 +1,0 @@
-package JavaLar;
-
-public class Bug extends OutrosPersonagens {
-
-	public Bug(int pX, int pY) {
-		super(pX, pY);
-	}
-
-}

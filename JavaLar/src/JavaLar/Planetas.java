@@ -1,5 +1,7 @@
 package JavaLar;
 
+import java.util.ArrayList;
+
 public abstract class Planetas {
 
 	protected int[] posicao = new int[2];
@@ -56,5 +58,16 @@ public abstract class Planetas {
 	}
 
 	public abstract void mover(int instantes);
+	
+	public static void showSpeed(ArrayList<Planetas> planeta) {
+		System.out.println("\n\n");
+		for (Planetas planetas : planeta) {
+			System.out.println("A velocidade do planeta " + planetas.getNome() + " é de " + planetas.getVelocidade() + " unidades");
+		}
+		
+		
+	}
+
+	
 
 }

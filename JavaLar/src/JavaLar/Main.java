@@ -39,17 +39,17 @@ public class Main {
 			// Variável que realiza o do-while
 			int escolha = 0;
 			do {
-				System.out.println("Digte os instantes:");
+				System.out.println("Digite os instantes:");
 				int instantes = Utilidades.retornarInstantes();
 				int quantidadeBug = 0;
 				int quantidadeDesenvolvedores = 0;
-				int espacoDisponivel = 224 - planetas.size() - bugs.size() - dev.size();
+				int espacoDisponivel = 225 - planetas.size() - bugs.size() - dev.size();
 
 				System.out.print("Digite a quantidade de Bugs que você deseja: ");
 				quantidadeBug = Utilidades.retornarQuantidadeDeBugs(espacoDisponivel);
 				Bug.criarBugs(quantidadeBug, bugs, dev);
 
-				espacoDisponivel = 224 - planetas.size() - bugs.size() - dev.size();
+				espacoDisponivel = 225 - planetas.size() - bugs.size() - dev.size();
 
 				System.out.println("Digite a quantidade de Desenvolvedores que você deseja: ");
 				quantidadeDesenvolvedores = Utilidades.retornarQuantidadeDeDevs(espacoDisponivel);
@@ -57,9 +57,12 @@ public class Main {
 
 				Utilidades.mover(planetas, instantes);
 				Utilidades.show(planetas);
+				
 
-				Bug.verificarEncontrocomBugs(planetas, bugs);
+				Bug.verificarEncontroComBugs(planetas, bugs);
 				Desenvolvedor.verificarEncontroComDesenvolvedores(planetas, dev);
+				
+				
 				int quantidadeDePlanetasExistentes = planetas.size();
 				if (quantidadeDePlanetasExistentes == 0) {
 					System.out.println("Todos os planetas explodiram !");
