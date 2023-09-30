@@ -5,8 +5,8 @@ public class PHP extends Planetas {
 	private int orbitaPermitida[][];
 	private int indicePosAtual;
 
-	public PHP(int posicaoX, int posicaoY, int velocidade, int horas) {
-		super(8, 12, velocidade, horas);
+	public PHP(int posicaoX, int posicaoY, int velocidade, int horas, String nome) {
+		super(8, 12, velocidade, horas, nome);
 
 		preencherOrbita();
 		setVelocidade(velocidade);

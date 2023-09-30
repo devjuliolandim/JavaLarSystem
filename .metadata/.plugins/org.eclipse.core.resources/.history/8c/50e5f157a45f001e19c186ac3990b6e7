@@ -1,0 +1,50 @@
+package JavaLar;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Bug extends OutrosPersonagens {
+
+	public Bug(int pX, int pY) {
+		super(pX, pY);
+	}
+	
+	
+	public void criarBugs(int qntdBug, ArrayList<Bug> bugs, ArrayList<Desenvolvedor> devs) {
+		Random random = new Random();
+		boolean[][] posOcupadas = new boolean[15][15];
+		int pX = 0;
+		int pY = 0;
+
+		for (Desenvolvedor desenvolvedor : devs) {
+
+			pX = desenvolvedor.getPX();
+			pY = desenvolvedor.getPY();
+
+			posOcupadas[pX][pY] = true;
+
+		}
+
+		for (int i = 0; i < qntdBug; i++) {
+
+			do {
+				pX = random.nextInt(15);
+				pY = random.nextInt(15);
+			} while (posOcupadas[pX][pY] == true || (pX == 8 && pY == 8));
+
+			Bug bug = new Bug(pX, pY);
+			bugs.add(bug);
+			posOcupadas[pX][pY] = true;
+
+		}
+
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

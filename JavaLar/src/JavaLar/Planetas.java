@@ -5,12 +5,22 @@ public abstract class Planetas {
 	protected int[] posicao = new int[2];
 	protected int velocidade;
 	protected int horas;
+	protected String nome;
 
-	public Planetas(int posicaoX, int posicaoY, int velocidade, int horas) {
+	public Planetas(int posicaoX, int posicaoY, int velocidade, int horas, String nome) {
 		this.posicao[0] = posicaoX;
 		this.posicao[1] = posicaoY;
 		this.velocidade = velocidade;
 		this.horas = horas;
+		this.nome = nome;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public int[] getPosicao() {

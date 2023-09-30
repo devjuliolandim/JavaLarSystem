@@ -5,8 +5,8 @@ public class RubyOnRails extends Planetas {
 	private int orbitaPermitida[][];
 	private int indicePosAtual = 0;
 
-	public RubyOnRails(int posicaoX, int posicaoY, int velocidade, int horas) {
-		super(posicaoX, posicaoY, velocidade, horas);
+	public RubyOnRails(int posicaoX, int posicaoY, int velocidade, int horas, String nome) {
+		super(posicaoX, posicaoY, velocidade, horas, nome);
 
 		preencherOrbita();
 		setVelocidade(velocidade);

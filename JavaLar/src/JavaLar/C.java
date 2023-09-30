@@ -5,8 +5,8 @@ public class C extends Planetas {
 	private int orbitaPermitida[][];
 	private int indicePosAtual;
 
-	public C(int posicaoX, int posicaoY, int velocidade, int horas) {
-		super(posicaoX, posicaoY, velocidade, horas);
+	public C(int posicaoX, int posicaoY, int velocidade, int horas, String nome) {
+		super(posicaoX, posicaoY, velocidade, horas, nome);
 
 		preencherOrbita();
 		setVelocidade(velocidade);

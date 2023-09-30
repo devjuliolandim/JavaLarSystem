@@ -5,8 +5,8 @@ public class CSharp extends Planetas {
 	private int orbitaPermitida[][];
 	private int indicePosAtual;
 
-	public CSharp(int posicaoX, int posicaoY, int velocidade, int horas) {
-		super(posicaoX, posicaoY, velocidade, horas);
+	public CSharp(int posicaoX, int posicaoY, int velocidade, int horas, String nome) {
+		super(posicaoX, posicaoY, velocidade, horas, nome);
 
 		preencherOrbita();
 		setVelocidade(velocidade);

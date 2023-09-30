@@ -1,0 +1,10 @@
+package JavaLar;
+
+public class Desenvolvedor extends OutrosPersonagens {
+
+	public Desenvolvedor(int pX, int pY) {
+		super(pX, pY);
+
+	}
+	
+}
