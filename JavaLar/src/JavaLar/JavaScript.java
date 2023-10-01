@@ -14,12 +14,15 @@ public class JavaScript extends Planetas {
 
 	private int indicePosAtual = 0;
 
-	public JavaScript(int posicaoX, int PosicaoY, int velocidade, int horas, String nome) {
-		super(8, 10, velocidade, horas, nome);
+	public JavaScript(int posicaoX, int PosicaoY, int velocidade, double horas) {
+		super(8, 10, velocidade, horas);
 
 		preencherOrbita();
 		setVelocidade(velocidade);
 		setPosicao(new int[] { 8, 10 });
+		setBugsCont(0);
+		setDevsCont(0);
+		setNome("JavaScript");
 	}
 
 	public void preencherOrbita() {

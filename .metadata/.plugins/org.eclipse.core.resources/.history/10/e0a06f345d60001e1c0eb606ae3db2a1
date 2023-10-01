@@ -1,0 +1,27 @@
+package JavaLar;
+
+import java.util.ArrayList;
+
+public class Relatorio {
+
+	public static void relatorio(ArrayList<Planetas> planetas) {
+
+		for(Planetas planeta : planetas) {
+			
+			System.out.println("-//-//-//-//- " + planeta.getNome() + " -//-//-//-//-");
+			System.out.println("A quantidade de vezes que o planeta " + planeta.getNome() + " colidiu com um bug foi: " + planeta.getBugsCont());
+			System.out.println("A quantidade de vezes que o planeta" + planeta.getNome() + " colidiu com um desenvolvedor foi: " + planeta.getDevsCont());
+		
+		}
+		
+		
+		
+	}
+	
+	
+	
+			
+	
+	
+	
+}

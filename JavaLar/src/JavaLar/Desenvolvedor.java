@@ -47,10 +47,13 @@ public class Desenvolvedor extends OutrosPersonagens {
 		
 		
 		for (Planetas planeta : planetas) {
+			int velocidade = planeta.getVelocidade();
+			int devsCont = planeta.getDevsCont();
 			for (Desenvolvedor dev : desenvolvedor) {
 				if (planeta.getPosicaoX() == dev.getPX() && planeta.getPosicaoY() == dev.getPY()) {
 					System.out.println("Há uma colisão do planeta " + planeta.getNome() + " com um Desenvolvedor na posição ("+ planeta.getPosicaoX() + ", " + planeta.getPosicaoY() + ")");
-					int velocidade = planeta.getVelocidade();
+					
+					planeta.setDevsCont(devsCont + 1);
 					planeta.setVelocidade(velocidade + 1);
 					removerDev.add(dev);
 					

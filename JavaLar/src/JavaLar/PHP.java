@@ -5,12 +5,15 @@ public class PHP extends Planetas {
 	private int orbitaPermitida[][];
 	private int indicePosAtual;
 
-	public PHP(int posicaoX, int posicaoY, int velocidade, int horas, String nome) {
-		super(8, 12, velocidade, horas, nome);
+	public PHP(int posicaoX, int posicaoY, int velocidade, double horas) {
+		super(8, 12, velocidade, horas);
 
 		preencherOrbita();
 		setVelocidade(velocidade);
 		setPosicao(new int[] { 8, 12 });
+		setBugsCont(0);
+		setDevsCont(0);
+		setNome("PHP");
 	}
 
 	public void preencherOrbita() {

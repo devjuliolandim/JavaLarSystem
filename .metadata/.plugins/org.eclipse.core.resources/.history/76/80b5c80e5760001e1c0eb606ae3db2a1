@@ -1,0 +1,59 @@
+package JavaLar;
+
+import java.util.ArrayList;
+
+public class Calculos {
+
+	public static void infos(ArrayList<Planetas> planetas, int instantes) {
+
+		for (Planetas planeta : planetas) {
+			System.out.println("-//-//-//-//- " + planeta.getNome() + " -//-//-//-//-");
+			velocidadeTranslacao(planeta);
+			quantosDias(planeta, instantes);
+			System.out.println("\n\n");
+
+		}
+
+		System.out.println("\n\n");
+
+	}
+
+	public static void velocidadeTranslacao(Planetas planeta) {
+		System.out.println("A velocidade do planeta " + planeta.getNome() + " é de " + planeta.getVelocidade()
+				+ " unidades por instante");
+	}
+
+	public static void quantosDias(Planetas planeta, int instantes) {
+		System.out.println("Passaram-se " + planeta.getHoras() * instantes + " horas no planeta " + planeta.getNome());
+
+	}
+
+	public static void hemisferios(ArrayList<Planetas> planetas) {
+
+		int norte = 0;
+		int sul = 0;
+
+		for (Planetas planeta : planetas) {
+			if (planeta.getPosicaoY() > 8) {
+				norte++;
+			}
+			if (planeta.getPosicaoY() < 8) {
+				sul++;
+			}
+
+		}
+
+		if (norte > 0) {
+
+			System.out.println("Existem " + norte + " planetas acima de Java!");
+
+		}
+
+		if (sul > 0) {
+
+			System.out.println("Existem " + sul + " planetas abaixo de Java!");
+		}
+
+	}
+
+}

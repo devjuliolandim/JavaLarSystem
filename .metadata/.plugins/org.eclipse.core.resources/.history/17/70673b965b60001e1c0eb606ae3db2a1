@@ -1,0 +1,20 @@
+package JavaLar;
+
+public class CemiterioDePlanetas {
+
+	public Planetas getPlaneta() {
+		return planeta;
+	}
+
+	public void setPlaneta(Planetas planeta) {
+		this.planeta = planeta;
+	}
+
+	private Planetas planeta;
+
+	public CemiterioDePlanetas(Planetas planeta) {
+		this.planeta = planeta;
+
+	}
+
+}

@@ -5,12 +5,15 @@ public class RubyOnRails extends Planetas {
 	private int orbitaPermitida[][];
 	private int indicePosAtual = 0;
 
-	public RubyOnRails(int posicaoX, int posicaoY, int velocidade, int horas, String nome) {
-		super(posicaoX, posicaoY, velocidade, horas, nome);
+	public RubyOnRails(int posicaoX, int posicaoY, int velocidade, int horas) {
+		super(posicaoX, posicaoY, velocidade, horas);
 
 		preencherOrbita();
 		setVelocidade(velocidade);
 		setPosicao(new int[] { 8, 11 });
+		setBugsCont(0);
+		setDevsCont(0);
+		setNome("Ruby on Rails");
 	}
 
 	public void preencherOrbita() {

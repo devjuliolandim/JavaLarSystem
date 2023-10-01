@@ -6,15 +6,35 @@ public abstract class Planetas {
 
 	protected int[] posicao = new int[2];
 	protected int velocidade;
-	protected int horas;
+	protected double horas;
 	protected String nome;
+	protected int bugsCont;
+	protected int devsCont;
+	
+	
+	
+	
+	public int getDevsCont() {
+		return devsCont;
+	}
 
-	public Planetas(int posicaoX, int posicaoY, int velocidade, int horas, String nome) {
+	public void setDevsCont(int devsCont) {
+		this.devsCont = devsCont;
+	}
+
+	public int getBugsCont() {
+		return bugsCont;
+	}
+
+	public void setBugsCont(int bugsCont) {
+		this.bugsCont = bugsCont;
+	}
+
+	public Planetas(int posicaoX, int posicaoY, int velocidade, double horas) {
 		this.posicao[0] = posicaoX;
 		this.posicao[1] = posicaoY;
 		this.velocidade = velocidade;
 		this.horas = horas;
-		this.nome = nome;
 	}
 
 	public String getNome() {
@@ -49,11 +69,11 @@ public abstract class Planetas {
 		this.velocidade = velocidade;
 	}
 
-	public int getHoras() {
+	public double getHoras() {
 		return horas;
 	}
 
-	public void setHoras(int horas) {
+	public void setHoras(double horas) {
 		this.horas = horas;
 	}
 
@@ -67,7 +87,7 @@ public abstract class Planetas {
 		
 		
 	}
-
+	
 	
 
 }

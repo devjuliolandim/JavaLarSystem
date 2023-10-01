@@ -9,15 +9,19 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 
 		// Criação dos objetos planetas!
-		Python python = new Python(8, 9, 4, 0, "Python");
-		JavaScript javaScript = new JavaScript(8, 10, 3, 0, "JavaScript");
-		RubyOnRails ROR = new RubyOnRails(8, 11, 2, 0, "Ruby on Rails");
-		PHP php = new PHP(8, 12, 2, 0, "PHP");
-		CSharp csharp = new CSharp(8, 13, 1, 0, "C#");
-		CPlusPlus cplusplus = new CPlusPlus(8, 14, 2, 0, "C++");
-		C c = new C(8, 15, 10, 0, "C");
-
+		Python python = new Python(8, 9, 4, 24);
+		JavaScript javaScript = new JavaScript(8, 10, 3, 10);
+		RubyOnRails ROR = new RubyOnRails(8, 11, 2, 48);
+		PHP php = new PHP(8, 12, 2, 60);
+		CSharp csharp = new CSharp(8, 13, 1, 4);
+		CPlusPlus cplusplus = new CPlusPlus(8, 14, 2, 0.5);
+		C c = new C(8, 15, 10, 0.1);
+		
+		ArrayList<Bug> bugs = new ArrayList<>();
+		ArrayList<Desenvolvedor> dev = new ArrayList<>();
 		ArrayList<Planetas> planetas = new ArrayList<>();
+		ArrayList<CemiterioDePlanetas> cova = new ArrayList<>();
+		
 		planetas.add(python);
 		planetas.add(javaScript);
 		planetas.add(ROR);
@@ -26,8 +30,7 @@ public class Main {
 		planetas.add(cplusplus);
 		planetas.add(c);
 
-		ArrayList<Bug> bugs = new ArrayList<>();
-		ArrayList<Desenvolvedor> dev = new ArrayList<>();
+		
 
 		MostrarMensagens.bemVindo();
 
@@ -36,20 +39,24 @@ public class Main {
 		switch (opcao) {
 
 		case 1:
-			// Variável que realiza o do-while
-			int escolha = 0;
+			
+			int escolha = 0;   // Variável que realiza o do-while
+			int somatorioDeInstantes = 0;   //Variável que soma o quanto de instante o usuário pediu
 			do {
 				System.out.println("Digite os instantes:");
+				
 				int instantes = Utilidades.retornarInstantes();
+				somatorioDeInstantes += instantes;
+				
 				int quantidadeBug = 0;
 				int quantidadeDesenvolvedores = 0;
-				int espacoDisponivel = 225 - planetas.size() - bugs.size() - dev.size();
+				int espacoDisponivel = 224 -  bugs.size() - dev.size();
 
 				System.out.print("Digite a quantidade de Bugs que você deseja: ");
 				quantidadeBug = Utilidades.retornarQuantidadeDeBugs(espacoDisponivel);
 				Bug.criarBugs(quantidadeBug, bugs, dev);
 
-				espacoDisponivel = 225 - planetas.size() - bugs.size() - dev.size();
+				espacoDisponivel = 224 - bugs.size() - dev.size();
 
 				System.out.println("Digite a quantidade de Desenvolvedores que você deseja: ");
 				quantidadeDesenvolvedores = Utilidades.retornarQuantidadeDeDevs(espacoDisponivel);
@@ -59,13 +66,18 @@ public class Main {
 				Utilidades.show(planetas);
 				
 
-				Bug.verificarEncontroComBugs(planetas, bugs);
+				Bug.verificarEncontroComBugs(planetas, bugs, cova);
 				Desenvolvedor.verificarEncontroComDesenvolvedores(planetas, dev);
+				
+				Calculos.infos(planetas, instantes);
+				
 				
 				
 				int quantidadeDePlanetasExistentes = planetas.size();
 				if (quantidadeDePlanetasExistentes == 0) {
 					System.out.println("Todos os planetas explodiram !");
+					Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
+					System.out.println("\n\nFim de programa!");
 					break;
 				}
 
@@ -76,8 +88,9 @@ public class Main {
 				escolha = scanner.nextInt();
 
 				if (escolha == 2) {
-
-					System.out.println("Fim de programa!");
+					Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
+					
+					System.out.println("\n\nFim de programa!");
 				}
 
 			} while (escolha == 1);

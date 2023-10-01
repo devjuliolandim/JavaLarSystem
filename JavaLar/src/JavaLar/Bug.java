@@ -42,19 +42,20 @@ public class Bug extends OutrosPersonagens {
 
 	}
 
-	public static void verificarEncontroComBugs(ArrayList<Planetas> planetas, ArrayList<Bug> bugs) {
+	public static void verificarEncontroComBugs(ArrayList<Planetas> planetas, ArrayList<Bug> bugs, ArrayList<CemiterioDePlanetas> cova) {
 
 		ArrayList<Bug> removerBug = new ArrayList<>();
 		ArrayList<Planetas> removerPlaneta = new ArrayList<>();
-
+		
 		for (Planetas planeta : planetas) {
 			int velocidade = planeta.getVelocidade();
+			int bugsCont = planeta.getBugsCont();
 			if(true) {
 			for (Bug bug : bugs) {
-				//System.out.println( bug.getPX() + "  " + "  " + bug.getPY());
 				if (planeta.getPosicaoX() == bug.getPX() && planeta.getPosicaoY() == bug.getPY()) {
 					System.out.println("Há uma colisão do planeta " + planeta.getNome() + " com um bug na posicão ("
 							+ planeta.getPosicaoX() + ", " + planeta.getPosicaoY() + ")");
+					planeta.setBugsCont(bugsCont + 1);
 					planeta.setVelocidade(velocidade - 1);
 					removerBug.add(bug);
 				}
@@ -63,6 +64,9 @@ public class Bug extends OutrosPersonagens {
 			}
 			if (planeta.getVelocidade() == 0) {
 				removerPlaneta.add(planeta);
+				
+				CemiterioDePlanetas planetaMorto = new CemiterioDePlanetas(planeta.getNome());
+				cova.add(planetaMorto);
 			}
 
 		}

@@ -4,268 +4,301 @@ import java.util.ArrayList;
 
 public class Calculos {
 
-	public static void hemisferios(String planeta, int[] posicao) {
+	public static void infos(ArrayList<Planetas> planetas, int instantes) {
+		System.out.println("\n");
+		for (Planetas planeta : planetas) {
+			System.out.println("-//-//-//-//- " + planeta.getNome() + " -//-//-//-//-");
+			velocidadeTranslacao(planeta);
+			quantosDias(planeta, instantes);
+			areaEntreDoisPontos(planetas, planeta);
+			distanciaEntreDoisPontos(planetas, planeta);
+			System.out.println("\n\n");
 
-		String hemisferio = null;
-
-		if (posicao[1] > 8) {
-
-			hemisferio = "Norte";
-		} else if (posicao[1] < 8) {
-
-			hemisferio = "Sul";
 		}
 
-		System.out.println("O planeta " + planeta + " está no Hemisfério " + hemisferio);
-
-	}
-
-	public static boolean diagonalSecundaria(int pX, int pY, int[][] posicoesGeral) {
-
-		int diagonalSecundaria = 0;
-		int diminuicao = 1;
-
-		for (int i = 0; i < 7; i++) {
-			if (pX == (posicoesGeral[i][0] - diminuicao) && pY == (posicoesGeral[i][1] - diminuicao)) {
-				diagonalSecundaria++;
-			}
-
-			if (diagonalSecundaria > 0) {
-				diminuicao++;
-			}
-		}
-
-		if (diagonalSecundaria > 0) {
-
-			return true;
+		System.out.println("-//-//-//-//- DIAGONAIS -//-//-//-//-//-");
+		if (diagonais(planetas) == true) {
+			diagonais(planetas);
+		} else if (norteSul(planetas) == true) {
+			norteSul(planetas);
 		} else {
+			System.out.println("Não há nenhuma diagonal em relação a Java");
+		}
 
-			return false;
+		System.out.println("\n\n");
+
+	}
+
+	public static void velocidadeTranslacao(Planetas planeta) {
+		System.out.println("A velocidade de translação do planeta " + planeta.getNome() + " é de " + planeta.getVelocidade()
+				+ " unidades por instante");
+	}
+
+	public static void quantosDias(Planetas planeta, int instantes) {
+		System.out.println("Passaram-se " + planeta.getHoras() * instantes + " horas no planeta " + planeta.getNome());
+
+	}
+
+	public static void hemisferios(ArrayList<Planetas> planetas) {
+
+		int norte = 0;
+		int sul = 0;
+
+		for (Planetas planeta : planetas) {
+			if (planeta.getPosicaoY() > 8) {
+				norte++;
+			}
+			if (planeta.getPosicaoY() < 8) {
+				sul++;
+			}
+
+		}
+
+		if (norte > 0) {
+
+			System.out.println("Existem " + norte + " planetas acima de Java!");
+
+		}
+
+		if (sul > 0) {
+
+			System.out.println("Existem " + sul + " planetas abaixo de Java!");
 		}
 
 	}
 
-	public static boolean diagonalPrincipal(int pX, int pY, int[][] posicoes) {
-		int diagonalPrincipal = 0;
-		int diminuicao = 1;
-		int aumento = 1;
+	public static void areaEntreDoisPontos(ArrayList<Planetas> planetas, Planetas planeta) {
+		System.out.println("\n--- A área é calculada em JavaMetros ao quadrado = Jm² ---");
 
-		for (int i = 0; i < 7; i++) {
+		for (Planetas planeta1 : planetas) {
+			for (Planetas planeta2 : planetas) {
 
-			if (pX == (posicoes[i][0] + aumento) && pY == (posicoes[i][1] - diminuicao)) {
-				diagonalPrincipal++;
+				if (planeta1 != planeta2 && planeta1 == planeta) {
+
+					double area = calcularArea(planeta1, planeta2);
+
+					System.out.println("A àrea entre " + planeta1.getNome() + " e " + planeta2.getNome() + " é de "
+							+ area + " Jm²");
+				}
+
 			}
-			if (diagonalPrincipal > 0) {
-				diminuicao++;
-				aumento++;
-			}
+		}
 
-		}
-		
-		
-		if(diagonalPrincipal > 0) {
-			
-			return true;
-		}else {
-			
-			return false;
-		}
-		
-	
 	}
 
-	public static void alinhamentosDiagonal(Python p, JavaScript js, RubyOnRails ror, PHP php, CSharp cs, CPlusPlus cp,
-			C c) {
+	public static double calcularArea(Planetas planeta1, Planetas planeta2) {
+		double altura = Math.abs(planeta2.getPosicaoY() - planeta1.getPosicaoY());
+		double base = Math.abs(planeta2.getPosicaoX() - planeta1.getPosicaoX());
+		double area = base * altura;
 
-		int[][] posicoes = new int[7][2];
+		return area;
 
-		posicoes[0][0] = p.getPosicaoX();
-		posicoes[0][1] = p.getPosicaoY();
-		posicoes[1][0] = js.getPosicaoX();
-		posicoes[1][1] = js.getPosicaoY();
-		posicoes[2][0] = ror.getPosicaoX();
-		posicoes[2][1] = ror.getPosicaoY();
-		posicoes[3][0] = php.getPosicaoX();
-		posicoes[3][1] = php.getPosicaoY();
-		posicoes[4][0] = cs.getPosicaoX();
-		posicoes[4][1] = cs.getPosicaoY();
-		posicoes[5][0] = cp.getPosicaoX();
-		posicoes[5][1] = cp.getPosicaoY();
-		posicoes[6][0] = c.getPosicaoX();
-		posicoes[6][1] = c.getPosicaoY();
-
-		ArrayList<String> planetasDiagonalSecundaria = new ArrayList<>();
-
-		if (diagonalSecundaria(posicoes[0][0], posicoes[0][1], posicoes) == true) {
-			planetasDiagonalSecundaria.add("Python");
-		}
-		if (diagonalSecundaria(posicoes[1][0], posicoes[1][1], posicoes) == true) {
-			planetasDiagonalSecundaria.add("JavaScript");
-		}
-		if (diagonalSecundaria(posicoes[2][0], posicoes[2][1], posicoes) == true) {
-			planetasDiagonalSecundaria.add("Ruby on Rails");
-		}
-		if (diagonalSecundaria(posicoes[3][0], posicoes[3][1], posicoes) == true) {
-			planetasDiagonalSecundaria.add("PHP");
-		}
-		if (diagonalSecundaria(posicoes[4][0], posicoes[4][1], posicoes) == true) {
-			planetasDiagonalSecundaria.add("C#");
-		}
-		if (diagonalSecundaria(posicoes[5][0], posicoes[5][1], posicoes) == true) {
-			planetasDiagonalSecundaria.add("C++");
-		}
-		if (diagonalSecundaria(posicoes[6][0], posicoes[6][1], posicoes) == true) {
-			planetasDiagonalSecundaria.add("C");
-		}
-
-		
-		System.out.println("\n-//-//-//- Diagonais -//-//-//-");
-		
-		if (!planetasDiagonalSecundaria.isEmpty()) {
-			System.out.println("Há alinhamentos na diagonal secundária dos seguintes planetas:");
-			for (String planeta : planetasDiagonalSecundaria) {
-				System.out.print(planeta + ", ");
-			}
-		} else {
-			System.out.println("Não há nenhum alinhamento na diagonal secundária!");
-		}
-
-		
-		
-		ArrayList<String> planetasDiagonalPrincipal = new ArrayList<>();
-		
-		if (diagonalPrincipal(posicoes[0][0], posicoes[0][1], posicoes) == true) {
-			planetasDiagonalPrincipal.add("Python");
-		}
-		if (diagonalPrincipal(posicoes[1][0], posicoes[1][1], posicoes) == true) {
-			planetasDiagonalPrincipal.add("JavaScript");
-		}
-		if (diagonalPrincipal(posicoes[2][0], posicoes[2][1], posicoes) == true) {
-			planetasDiagonalPrincipal.add("Ruby on Rails");
-		}
-		if (diagonalPrincipal(posicoes[3][0], posicoes[3][1], posicoes) == true) {
-			planetasDiagonalPrincipal.add("PHP");
-		}
-		if (diagonalPrincipal(posicoes[4][0], posicoes[4][1], posicoes) == true) {
-			planetasDiagonalPrincipal.add("C#");
-		}
-		if (diagonalPrincipal(posicoes[5][0], posicoes[5][1], posicoes) == true) {
-			planetasDiagonalPrincipal.add("C++");
-		}
-		if (diagonalPrincipal(posicoes[6][0], posicoes[6][1], posicoes) == true) {
-			planetasDiagonalPrincipal.add("C");
-		}
-		
-		
-		if(!planetasDiagonalPrincipal.isEmpty()) {
-			
-			System.out.println("\nHá alinhamentos de planetas na diagonal principal dos planetas:");
-			for(String planeta : planetasDiagonalPrincipal) {
-				System.out.print(planeta + ", ");
-				
-			} 
-			
-		}else {
-			
-			System.out.println("Não há alinhamentos na diagonal principal");
-		}
-		
-		
 	}
 
-	public static void alinhamentosEixoX(Python p, JavaScript js, RubyOnRails ror, PHP php, CSharp cs, CPlusPlus cp,
-			C c) {
+	public static void distanciaEntreDoisPontos(ArrayList<Planetas> planetas, Planetas planeta) {
 
-		int pX = p.getPosicaoX();
-		int jsX = js.getPosicaoX();
-		int rorX = ror.getPosicaoX();
-		int phpX = php.getPosicaoX();
-		int csX = cs.getPosicaoX();
-		int cpX = js.getPosicaoX();
-		int cX = js.getPosicaoX();
+		System.out.println("\n--- A distância é calculada em JavaMetros = Jm ---");
 
-		int[] posicoes = new int[7];
+		for (Planetas planeta1 : planetas) {
+			for (Planetas planeta2 : planetas) {
 
-		posicoes[0] = pX;
-		posicoes[1] = jsX;
-		posicoes[2] = rorX;
-		posicoes[3] = phpX;
-		posicoes[4] = csX;
-		posicoes[5] = cpX;
-		posicoes[6] = cX;
+				if (planeta1 != planeta2 && planeta1 == planeta) {
 
-		int alinhamentos = 0;
+					double distancia = calcularDistancia(planeta1, planeta2);
 
-		for (int i = 0; i < 7; i++) {
-			for (int j = 0; j < 7; j++) {
+					String resultado = String.format("%.2f", distancia);
 
-				if (posicoes[i] == posicoes[j]) {
-
-					alinhamentos++;
+					System.out.println("A distância entra o planeta " + planeta1.getNome() + " e " + planeta2.getNome()
+							+ " é de " + resultado + " Jm");
 				}
 
 			}
 
 		}
 
-		if (alinhamentos > 0) {
+	}
 
-			System.out.println("Há alinhamentos de planetas na vertical");
+	public static double calcularDistancia(Planetas planeta1, Planetas planeta2) {
+
+		double X = Math.abs(planeta1.getPosicaoX() - planeta2.getPosicaoX());
+		double Y = Math.abs(planeta1.getPosicaoY() - planeta2.getPosicaoY());
+
+		double XAoQuadrado = Math.pow(X, 2);
+		double YAoQuadrado = Math.pow(Y, 2);
+		double distancia = Math.sqrt((XAoQuadrado + YAoQuadrado));
+
+		return distancia;
+	}
+
+	public static boolean norteSul(ArrayList<Planetas> planetas) {
+
+		int i = alinhamentoNorteSul(planetas);
+
+		if (i == 1) {
+
+			System.out.println("Há alinhamento ao norte de Java");
+			return true;
+		} else if (i == 2) {
+
+			System.out.println("Há alinhamento ao sul de Java");
+			return true;
+		} else {
 
 		}
 
+		return false;
 	}
 
-	public static void DistanciaArea(Python p, JavaScript js, RubyOnRails ror, PHP php, CSharp cs, CPlusPlus cp, C c) {
+	public static boolean diagonais(ArrayList<Planetas> planetas) {
+		if (alinhamentoDiagonal(planetas) == 1) {
+			System.out.println("Há alinhamento na diagonal Nordeste de Java!");
+			return true;
+		} else if (alinhamentoDiagonal(planetas) == 2) {
+			System.out.println("Há alinhamento na diagonal Noroeste de Java!");
+			return true;
+		} else if (alinhamentoDiagonal(planetas) == 3) {
+			System.out.println("Há alinhamento na diagonal Sudoeste de Java!");
+			return true;
+		} else if (alinhamentoDiagonal(planetas) == 4) {
+			System.out.println("Há alinhamento na diagonal Sudeste de Java!");
+			return true;
+		} else {
+		}
 
+		return false;
 	}
 
-	public static void numeroDePlanetas(Python p, JavaScript js, RubyOnRails ror, PHP php, CSharp cs, CPlusPlus cp,
-			C c) {
+	public static int alinhamentoNorteSul(ArrayList<Planetas> planetas) {
 
-		int[] planetas = { p.getPosicaoY(), js.getPosicaoY(), ror.getPosicaoY(), php.getPosicaoY(), cs.getPosicaoY(),
-				cp.getPosicaoY(), c.getPosicaoY() };
+		int verify = 0;
 
-		int quantidadeNorte = 0;
+		for (int i = 0; i < planetas.size(); i++) {
 
-		int quantidadeSul = 0;
+			if (i + 1 < planetas.size()) {
+				Planetas proximoPlaneta = planetas.get(i + 1);
 
-		for (int i = 0; i < planetas.length; i++) {
+				if (planetas.get(i).getPosicaoY() == (proximoPlaneta.getPosicaoY() + 1)) {
 
-			if (planetas[i] > 8) {
+					verify++;
+				}
 
-				quantidadeNorte++;
-			} else if (planetas[i] < 8) {
-
-				quantidadeSul++;
 			}
 
 		}
 
-		String Norte = "Norte";
-		String Sul = "Sul";
+		if (verify == 6) {
 
-		System.out.println("-//-//-//-  Hemisfério de Planetas  -//-//-//-");
-		imprimirNumeroDePlanetas(Norte, quantidadeNorte);
-		imprimirNumeroDePlanetas(Sul, quantidadeSul);
-		System.out.println("-//-//-//-//-//-//-\n\n");
-
-	}
-
-	public static void imprimirNumeroDePlanetas(String direcao, int quantidade) {
-
-		if (quantidade > 0 && quantidade == 1) {
-
-			System.out.println("Existe 1 único planeta ao " + direcao + " de Java");
-
-		} else if (quantidade > 1) {
-
-			System.out.println("Existem " + quantidade + " planetas ao " + direcao + " de Java");
-		} else {
-
-			System.out.println("Não existe nenhum planeta ao " + direcao + " de Java!");
+			return 1; // 1 = Alinhamento ao norte de Java
 		}
 
+		verify = 0;
+
+		for (int i = 0; i < planetas.size(); i++) {
+
+			if (i + 1 < planetas.size()) {
+
+				Planetas proximoPlaneta = planetas.get(i + 1);
+
+				if (planetas.get(i).getPosicaoY() == (proximoPlaneta.getPosicaoY() - 1)) {
+
+					verify++;
+				}
+
+			}
+		}
+
+		if (verify == 6) {
+
+			return 2;
+		}
+
+		return 0;
+	}
+
+	public static int alinhamentoDiagonal(ArrayList<Planetas> planetas) {
+
+		int verify = 0;
+
+		for (int i = 0; i < planetas.size(); i++) {
+
+			if (i + 1 < planetas.size()) {
+
+				Planetas Proximoplaneta = planetas.get(i + 1);
+
+				if (planetas.get(i).getPosicaoX() == (Proximoplaneta.getPosicaoX() - 1)
+						&& planetas.get(i).getPosicaoY() == (Proximoplaneta.getPosicaoY() - 1)) {
+					verify++;
+				}
+
+			}
+
+		}
+
+		if (verify == 6) {
+
+			return 1;
+		}
+
+		verify = 0;
+		for (int i = 0; i < planetas.size(); i++) {
+
+			if (i + 1 < planetas.size()) {
+
+				Planetas Proximoplaneta = planetas.get(i + 1);
+
+				if (planetas.get(i).getPosicaoX() == (Proximoplaneta.getPosicaoX() + 1)
+						&& planetas.get(i).getPosicaoY() == (Proximoplaneta.getPosicaoY() - 1)) {
+					verify++;
+
+				}
+
+			}
+
+		}
+
+		if (verify == 6) {
+			return 2;
+		}
+
+		verify = 0;
+		for (int i = 0; i < planetas.size(); i++) {
+
+			if (i + 1 < planetas.size()) {
+
+				Planetas Proximoplaneta = planetas.get(i + 1);
+
+				if (planetas.get(i).getPosicaoX() == (Proximoplaneta.getPosicaoX() + 1)
+						&& planetas.get(i).getPosicaoY() == (Proximoplaneta.getPosicaoY() + 1)) {
+					verify++;
+				}
+			}
+
+		}
+		if (verify == 6) {
+			return 3;
+		}
+
+		verify = 0;
+
+		for (int i = 0; i < planetas.size(); i++) {
+
+			if (i + 1 < planetas.size()) {
+
+				Planetas Proximoplaneta = planetas.get(i + 1);
+
+				if (planetas.get(i).getPosicaoX() == (Proximoplaneta.getPosicaoX() - 1)
+						&& planetas.get(i).getPosicaoY() == (Proximoplaneta.getPosicaoY() + 1)) {
+					verify++;
+				}
+
+			}
+
+		}
+		if (verify == 6) {
+			return 4;
+		}
+
+		return 0;
 	}
 
 }

@@ -5,10 +5,13 @@ public class Python extends Planetas {
 	private int[][] orbitaPermitida;
 	private int indicePosAtual = 0;
 
-	public Python(int posicaoX, int posicaoY, int velocidade, int horas, String nome) {
-		super(posicaoX, posicaoY, velocidade, horas, nome);
+	public Python(int posicaoX, int posicaoY, int velocidade, double horas) {
+		super(posicaoX, posicaoY, velocidade, horas);
 
 		preencherOrbita();
+		setBugsCont(0);
+		setDevsCont(0);
+		setNome("Python");
 	}
 
 	private void preencherOrbita() {
@@ -39,12 +42,7 @@ public class Python extends Planetas {
 		}
 	}
 
-	public int horasPassadas(int instantes) {
 
-		horas = 24 * instantes;
-
-		return horas;
-	}
 
 	public void mover(int instantes) {
 
