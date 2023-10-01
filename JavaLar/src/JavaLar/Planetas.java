@@ -1,7 +1,5 @@
 package JavaLar;
 
-import java.util.ArrayList;
-
 public abstract class Planetas {
 
 	protected int[] posicao = new int[2];
@@ -10,10 +8,16 @@ public abstract class Planetas {
 	protected String nome;
 	protected int bugsCont;
 	protected int devsCont;
+	protected int anos;
 	
-	
-	
-	
+	public int getAnos() {
+		return anos;
+	}
+
+	public void setAnos(int anos) {
+		this.anos = anos;
+	}
+
 	public int getDevsCont() {
 		return devsCont;
 	}
@@ -77,17 +81,10 @@ public abstract class Planetas {
 		this.horas = horas;
 	}
 
-	public abstract void mover(int instantes);
-	
-	public static void showSpeed(ArrayList<Planetas> planeta) {
-		System.out.println("\n\n");
-		for (Planetas planetas : planeta) {
-			System.out.println("A velocidade do planeta " + planetas.getNome() + " é de " + planetas.getVelocidade() + " unidades");
-		}
+	public void mover(int instantes) {
 		
 		
 	}
-	
 	
 
 }

@@ -16,13 +16,13 @@ public class Calculos {
 
 		}
 
-		System.out.println("-//-//-//-//- DIAGONAIS -//-//-//-//-//-");
+		System.out.println("-//-//-//-//- ALINHAMENTOS -//-//-//-//-//-");
 		if (diagonais(planetas) == true) {
 			diagonais(planetas);
 		} else if (norteSul(planetas) == true) {
 			norteSul(planetas);
 		} else {
-			System.out.println("Não há nenhuma diagonal em relação a Java");
+			System.out.println("Não há nenhum alinhamento em relação a Java");
 		}
 
 		System.out.println("\n\n");
@@ -30,10 +30,11 @@ public class Calculos {
 	}
 
 	public static void velocidadeTranslacao(Planetas planeta) {
-		System.out.println("A velocidade de translação do planeta " + planeta.getNome() + " é de " + planeta.getVelocidade()
-				+ " unidades por instante");
+		System.out.println("A velocidade de translação do planeta " + planeta.getNome() + " é de "
+				+ planeta.getVelocidade() + " unidades por instante");
 	}
 
+	
 	public static void quantosDias(Planetas planeta, int instantes) {
 		System.out.println("Passaram-se " + planeta.getHoras() * instantes + " horas no planeta " + planeta.getNome());
 
@@ -89,6 +90,17 @@ public class Calculos {
 	public static double calcularArea(Planetas planeta1, Planetas planeta2) {
 		double altura = Math.abs(planeta2.getPosicaoY() - planeta1.getPosicaoY());
 		double base = Math.abs(planeta2.getPosicaoX() - planeta1.getPosicaoX());
+		
+		if(altura == 0) {
+			altura = 1;
+		}else if(base == 0) {
+			base = 1;
+			
+		}
+		
+		
+		
+		
 		double area = base * altura;
 
 		return area;

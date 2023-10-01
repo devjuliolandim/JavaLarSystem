@@ -67,6 +67,13 @@ public class JavaScript extends Planetas {
 
 			indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
 			setPosicao(orbitaPermitida[indicePosAtual]);
+			
+			
+			if(getPosicaoX() == 8 && getPosicaoY() == 10) {
+				
+				anos++;
+				
+			}
 
 		}
 

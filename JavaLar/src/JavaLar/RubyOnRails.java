@@ -55,6 +55,15 @@ public class RubyOnRails extends Planetas {
 			indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
 			setPosicao(orbitaPermitida[indicePosAtual]);
 
+			
+			if(getPosicaoX() == 8 && getPosicaoY() == 11) {
+				
+				anos++;
+				
+			}
+			
+			
+			
 		}
 
 	}

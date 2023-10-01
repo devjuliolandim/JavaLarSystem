@@ -22,6 +22,8 @@ public class Main {
 		ArrayList<Planetas> planetas = new ArrayList<>();
 		ArrayList<CemiterioDePlanetas> cova = new ArrayList<>();
 		
+		
+		
 		planetas.add(python);
 		planetas.add(javaScript);
 		planetas.add(ROR);
@@ -39,7 +41,6 @@ public class Main {
 		switch (opcao) {
 
 		case 1:
-			
 			int escolha = 0;   // Variável que realiza o do-while
 			int somatorioDeInstantes = 0;   //Variável que soma o quanto de instante o usuário pediu
 			do {
@@ -70,7 +71,6 @@ public class Main {
 				Desenvolvedor.verificarEncontroComDesenvolvedores(planetas, dev);
 				
 				Calculos.infos(planetas, instantes);
-				
 				
 				
 				int quantidadeDePlanetasExistentes = planetas.size();

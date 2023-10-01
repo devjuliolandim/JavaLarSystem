@@ -59,6 +59,14 @@ public class CSharp extends Planetas {
 			indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
 			setPosicao(orbitaPermitida[indicePosAtual]);
 
+			if(getPosicaoX() == 8 && getPosicaoY() == 13) {
+				
+				anos++;
+				
+			}
+			
+			
+			
 		}
 
 	}

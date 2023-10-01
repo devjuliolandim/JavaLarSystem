@@ -57,6 +57,17 @@ public class PHP extends Planetas {
 		for (int i = 0; i < instantes; i++) {
 			indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
 			setPosicao(orbitaPermitida[indicePosAtual]);
+		
+		
+			if(getPosicaoX() == 8 && getPosicaoY() == 12) {
+				
+				anos++;
+				
+			}
+		
+		
+		
+		
 		}
 
 	}

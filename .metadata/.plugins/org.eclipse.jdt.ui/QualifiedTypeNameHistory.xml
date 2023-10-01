@@ -6,10 +6,11 @@
     <fullyQualifiedTypeName name="JavaLar.OutrosPersonagens"/>
     <fullyQualifiedTypeName name="JavaLar.Utilidades"/>
     <fullyQualifiedTypeName name="JavaLar.Desenvolvedor"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="JavaLar.MostrarMensagens"/>
     <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="JavaLar.CemiterioDePlanetas"/>
 </qualifiedTypeNameHistroy>

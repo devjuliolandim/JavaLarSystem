@@ -16,8 +16,9 @@ public class Relatorio {
 					+ planeta.getBugsCont());
 			System.out.println("A quantidade de vezes que o planeta " + planeta.getNome()
 					+ " colidiu com um desenvolvedor foi: " + planeta.getDevsCont());
-			System.out.println("A velocidade de rotação é : " + planeta.getHoras() + ", horas por instante");
+			System.out.println("A velocidade de rotação foi de : " + planeta.getHoras() + " horas por instante");
 			System.out.println("A quantidade de horas que se passaram no planeta " + planeta.getNome() + " foram " + (planeta.getHoras() * instantes));
+			System.out.println("A quantidade de anos que se passaram no planeta " + planeta.getNome() + " foram " + planeta.getAnos());
 			System.out.println("\n\n");
 		}
 
@@ -51,6 +52,11 @@ public class Relatorio {
 		}
 
 	}
+	
+	
+	
+	
+	
 
 	public static float anosJavaLar(ArrayList<Planetas> planetas) {
 
