@@ -120,7 +120,7 @@ public class Calculos {
 
 					String resultado = String.format("%.2f", distancia);
 
-					System.out.println("A distância entra o planeta " + planeta1.getNome() + " e " + planeta2.getNome()
+					System.out.println("A distância entre o planeta " + planeta1.getNome() + " e " + planeta2.getNome()
 							+ " é de " + resultado + " Jm");
 				}
 

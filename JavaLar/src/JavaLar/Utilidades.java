@@ -6,8 +6,15 @@ import java.util.Scanner;
 
 public class Utilidades {
 
-	public static int retornarInstantes() {
-		Scanner scanner = new Scanner(System.in);
+	public Scanner scanner;
+	
+	public Utilidades() {
+		
+		
+	}
+	
+	public int retornarInstantes() {
+		scanner = new Scanner(System.in);
 
 		int opcao;
 
@@ -25,8 +32,8 @@ public class Utilidades {
 		return opcao;
 	}
 
-	public static int retornarOpcao() {
-		Scanner scanner = new Scanner(System.in);
+	public int retornarOpcao() {
+		scanner = new Scanner(System.in);
 
 		int opcao = 0;
 
@@ -69,8 +76,8 @@ public class Utilidades {
 
 	}
 
-	public static int retornarQuantidadeDeBugs(int espaco) {
-		Scanner scanner = new Scanner(System.in);
+	public int retornarQuantidadeDeBugs(int espaco) {
+		scanner = new Scanner(System.in);
 		int quantidade = 0;
 
 		do {
@@ -89,8 +96,8 @@ public class Utilidades {
 		return quantidade;
 	}
 
-	public static int retornarQuantidadeDeDevs(int espaco) {
-		Scanner scanner = new Scanner(System.in);
+	public int retornarQuantidadeDeDevs(int espaco) {
+		scanner = new Scanner(System.in);
 
 		int quantidade = 0;
 
