@@ -1,7 +1,6 @@
 package JavaLar;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Utilidades {
@@ -12,6 +11,7 @@ public class Utilidades {
 		
 		
 	}
+	
 	
 	public int retornarInstantes() {
 		scanner = new Scanner(System.in);

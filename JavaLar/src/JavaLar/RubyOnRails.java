@@ -2,8 +2,6 @@ package JavaLar;
 
 public class RubyOnRails extends Planetas {
 
-	private int orbitaPermitida[][];
-	private int indicePosAtual = 0;
 
 	public RubyOnRails(int posicaoX, int posicaoY, int velocidade, int horas) {
 		super(posicaoX, posicaoY, velocidade, horas);

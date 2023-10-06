@@ -2,13 +2,13 @@ package JavaLar;
 
 public class Python extends Planetas {
 
-	private int[][] orbitaPermitida;
-	private int indicePosAtual = 0;
 
 	public Python(int posicaoX, int posicaoY, int velocidade, double horas) {
 		super(posicaoX, posicaoY, velocidade, horas);
 
 		preencherOrbita();
+		
+		
 		setBugsCont(0);
 		setDevsCont(0);
 		setAnos(0);

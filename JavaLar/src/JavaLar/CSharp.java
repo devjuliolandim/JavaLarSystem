@@ -2,8 +2,6 @@ package JavaLar;
 
 public class CSharp extends Planetas {
 
-	private int orbitaPermitida[][];
-	private int indicePosAtual;
 
 	public CSharp(int posicaoX, int posicaoY, int velocidade, double horas) {
 		super(posicaoX, posicaoY, velocidade, horas);

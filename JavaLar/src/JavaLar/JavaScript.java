@@ -2,17 +2,6 @@ package JavaLar;
 
 public class JavaScript extends Planetas {
 
-	private int[][] orbitaPermitida = {
-
-			/*
-			 * { 8, 10 }, { 7, 10 }, { 6, 10 }, { 6, 9 }, { 6, 8 }, { 6, 7 }, { 6, 6 }, { 7,
-			 * 6 }, { 8, 6 }, { 9, 6 }, { 10, 6 }, { 10, 7 }, { 10, 8 }, { 10, 9 }, { 10, 10
-			 * }, { 9, 10 }
-			 */
-
-	};
-
-	private int indicePosAtual = 0;
 
 	public JavaScript(int posicaoX, int PosicaoY, int velocidade, double horas) {
 		super(8, 10, velocidade, horas);

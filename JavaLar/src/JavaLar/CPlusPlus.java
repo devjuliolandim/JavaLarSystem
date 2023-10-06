@@ -2,9 +2,7 @@ package JavaLar;
 
 public class CPlusPlus extends Planetas{
 
-	private int orbitaPermitida [][];
-	private int indicePosAtual;
-	
+
 	
 	
 	public CPlusPlus(int posicaoX, int posicaoY, int velocidade, double horas) {

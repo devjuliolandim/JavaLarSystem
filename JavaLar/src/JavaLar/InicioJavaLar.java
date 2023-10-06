@@ -1,28 +1,27 @@
 package JavaLar;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class InicioJavaLar {
 
-	public InicioJavaLar() {
-		
-		
-		Scanner scanner = new Scanner(System.in);
+	private int opcao;
+	private int somatorioDeInstantes;
 
-		Python python = new Python(8, 9, 4, 24);
-		JavaScript javaScript = new JavaScript(8, 10, 3, 10);
-		RubyOnRails ROR = new RubyOnRails(8, 11, 2, 48);
-		PHP php = new PHP(8, 12, 2, 60);
-		CSharp csharp = new CSharp(8, 13, 1, 4);
-		CPlusPlus cplusplus = new CPlusPlus(8, 14, 2, 0.5);
-		C c = new C(8, 15, 10, 0.1);
-		
+	public InicioJavaLar() {
+
+		Planetas python = new Python(8, 9, 4, 24);
+		Planetas javaScript = new JavaScript(8, 10, 3, 10);
+		Planetas ROR = new RubyOnRails(8, 11, 2, 48);
+		Planetas php = new PHP(8, 12, 2, 60);
+		Planetas csharp = new CSharp(8, 13, 1, 4);
+		Planetas cplusplus = new CPlusPlus(8, 14, 2, 0.5);
+		Planetas c = new C(8, 15, 10, 0.1);
+
 		ArrayList<Bug> bugs = new ArrayList<>();
 		ArrayList<Desenvolvedor> dev = new ArrayList<>();
 		ArrayList<Planetas> planetas = new ArrayList<>();
 		ArrayList<CemiterioDePlanetas> cova = new ArrayList<>();
-		
+
 		planetas.add(python);
 		planetas.add(javaScript);
 		planetas.add(ROR);
@@ -31,101 +30,39 @@ public class InicioJavaLar {
 		planetas.add(cplusplus);
 		planetas.add(c);
 
-		MostrarMensagens.bemVindo();
-
 		Utilidades utilidades = new Utilidades();
-		
-		int opcao = utilidades.retornarOpcao();
+
+		MostrarMensagens.bemVindo();
+		opcao = utilidades.retornarOpcao();
 
 		switch (opcao) {
 
 		case 1:
-			opcao = 0;   
-			int somatorioDeInstantes = 0;   
-			do {
-				System.out.println("Digite os instantes:");
-				
-				int instantes = utilidades.retornarInstantes();
-				somatorioDeInstantes += instantes;
-				
-				int quantidadeBug = 0;
-				int quantidadeDesenvolvedores = 0;
-				int espacoDisponivel = 224 - bugs.size() - dev.size();
+			opcao = 0;
+			somatorioDeInstantes = 0;
 
-				System.out.print("Digite a quantidade de Bugs que você deseja: ");
-				quantidadeBug = utilidades.retornarQuantidadeDeBugs(espacoDisponivel);
-				Bug.criarBugs(quantidadeBug, bugs, dev, planetas);
-
-				espacoDisponivel = 224 - bugs.size() - dev.size();
-
-				System.out.println("Digite a quantidade de Desenvolvedores que você deseja: ");
-				quantidadeDesenvolvedores = utilidades.retornarQuantidadeDeDevs(espacoDisponivel);
-				Desenvolvedor.criarDesenvolvedores(quantidadeDesenvolvedores, dev, bugs);
-
-				Utilidades.mover(planetas, instantes);
-				Utilidades.show(planetas);
-				
-				Bug.verificarEncontroComBugs(planetas, bugs, cova);
-				Desenvolvedor.verificarEncontroComDesenvolvedores(planetas, dev);
-				
-				Calculos.infos(planetas, instantes);
-				
-				int quantidadeDePlanetasExistentes = planetas.size();
-				if (quantidadeDePlanetasExistentes == 0) {
-					System.out.println("Todos os planetas explodiram !");
-					Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
-					System.out.println("\n\nFim de programa!");
-					break;
-				}
-
-				System.out.println("\n\nDeseja continuar?");
-				System.out.println("1 - Sim!");
-				System.out.println("2 - Não!");
-
-				opcao = scanner.nextInt();
-
-				if (opcao == 2) {
-					Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
-					
-					System.out.println("\n\nFim de programa!");
-				}
-
-			} while (opcao == 1);
+			new Simulacao(opcao, planetas, utilidades, somatorioDeInstantes, bugs, dev, cova);
 
 			break;
 
 		case 2:
-			int info = 0;
-			System.out.println("O que você deseja saber?");
-			System.out.println("1 - Como funciona o sistema?");
-			System.out.println("2 - O que são linguagens de programação?");
-			System.out.println("3 - Conte-me mais sobre as linguagens de programação do JavaLar :D");
+			MostrarMensagens.mostrarInformacoes();
 
-			info = utilidades.retornarOpcao();
+			opcao = 0;
+			opcao = utilidades.retornarOpcao();
 
-			// Pendente
-			if (info == 1) {
-
-			} else if (info == 2) {
-
-			} else if (info == 3) {
-
-			}
+			new MostrarMensagens(opcao, utilidades);
 
 			break;
 
 		case 3:
 
+			System.out.println("Tchau! Até a próxima!");
+
 			System.exit(0);
 
 		}
 
-		scanner.close();
 	}
 
-		
-	}
-	
-	
-	
-
+}

@@ -2,8 +2,6 @@ package JavaLar;
 
 public class PHP extends Planetas {
 
-	private int orbitaPermitida[][];
-	private int indicePosAtual;
 
 	public PHP(int posicaoX, int posicaoY, int velocidade, double horas) {
 		super(8, 12, velocidade, horas);

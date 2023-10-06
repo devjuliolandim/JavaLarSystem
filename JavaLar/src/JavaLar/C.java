@@ -2,9 +2,6 @@ package JavaLar;
 
 public class C extends Planetas {
 
-	private int orbitaPermitida[][];
-	private int indicePosAtual;
-
 	public C(int posicaoX, int posicaoY, int velocidade, double horas) {
 		super(posicaoX, posicaoY, velocidade, horas);
 

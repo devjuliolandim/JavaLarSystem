@@ -1,0 +1,26 @@
+package JavaLar;
+
+public class MostrarMensagens {
+
+	public static void bemVindo() {
+
+		System.out.println("Bem-vindo à Sistema JavaLar!!");
+		System.out.println("Digite um número correspondente à uma ação!");
+		System.out.println("1 - Iniciar");
+		System.out.println("2 - Informações");
+		System.out.println("3 - Sair");
+
+	}
+	
+	public static void mostrarInformacoes() {
+		
+		System.out.println("O que você deseja saber?");
+		System.out.println("1 - Como funciona o sistema?");
+		System.out.println("2 - O que são linguagens de programação?");
+		System.out.println("3 - Conte-me mais sobre as linguagens de programação do JavaLar :D");
+		
+		
+	}
+	
+	
+}

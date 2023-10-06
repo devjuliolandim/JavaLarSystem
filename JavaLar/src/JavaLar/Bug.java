@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Bug extends OutrosPersonagens {
 
+	
 	public Bug(int pX, int pY) {
 		super(pX, pY);
 	}
@@ -26,8 +27,6 @@ public class Bug extends OutrosPersonagens {
 
 		for (int i = 0; i < qntdBug; i++) {
 
-			
-	
 			do {
 				pX = random.nextInt(15) + 1;
 				pY = random.nextInt(15) + 1;
@@ -65,12 +64,13 @@ public class Bug extends OutrosPersonagens {
 			if (planeta.getVelocidade() == 0) {
 				removerPlaneta.add(planeta);
 
-				CemiterioDePlanetas planetaMorto = new CemiterioDePlanetas(planeta.getNome());
+				CemiterioDePlanetas planetaMorto = new CemiterioDePlanetas(planeta.getPosicaoX(), planeta.getPosicaoY(), planeta.getVelocidade(), planeta.getHoras());
 				cova.add(planetaMorto);
 			}
 
 		}
 
+		System.out.println("\n");
 		for (Planetas planeta : removerPlaneta) {
 			System.out.println("O planeta " + planeta.getNome() + " explodiu!");
 		}

@@ -1,13 +1,13 @@
 package JavaLar;
 
-public class CemiterioDePlanetas {
+public class CemiterioDePlanetas extends Planetas {
 
 	
 	private String nome;;
 
-	public CemiterioDePlanetas(String nome) {
-		this.nome = nome;
-
+	public CemiterioDePlanetas(int posicaoX, int posicaoY, int velocidade, double horas) {
+		super(posicaoX, posicaoY, velocidade, horas);
+		
 	}
 
 	public String getNome() {
