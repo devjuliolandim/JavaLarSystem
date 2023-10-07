@@ -60,8 +60,10 @@ public class Simulacao {
 			if (opcao == 2) {
 				Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
 				System.out.println("\n\nFim de programa!");
-				
+				break;
 			}
+			
+			
 			
 
 		} while (opcao == 1);

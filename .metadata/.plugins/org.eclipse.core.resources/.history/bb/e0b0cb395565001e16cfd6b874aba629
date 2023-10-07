@@ -63,6 +63,8 @@ public class Simulacao {
 				
 			}
 			
+			
+			
 
 		} while (opcao == 1);
 
