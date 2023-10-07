@@ -1,0 +1,54 @@
+package JavaLar;
+
+import java.util.ArrayList;
+
+public class Simulacao {
+
+	private int instantes = 0;
+	private int quantidadeBug = 0;
+	private int quantidadeDesenvolvedores = 0;
+	private int espacoDisponivel = 0;
+	private int somatorioDeInstantes = 0;
+	private int opcao = 0;
+	
+	public Simulacao(ArrayList<Planetas> planetas, Utilidades utilidades, ArrayList<Bug> bugs, ArrayList<Desenvolvedor> dev, ArrayList<CemiterioDePlanetas> cova) {
+
+		do {
+			System.out.print("\nDigite os instantes: ");
+
+			instantes = utilidades.retornarInstantes();
+			somatorioDeInstantes += instantes;
+
+			espacoDisponivel = 224 - bugs.size() - dev.size();
+
+			System.out.print("Digite a quantidade de Bugs que você deseja: ");
+			quantidadeBug = utilidades.retornarQuantidadeDeBugs(espacoDisponivel);
+			Bug.criarBugs(quantidadeBug, bugs, dev, planetas);
+
+			espacoDisponivel = 224 - bugs.size() - dev.size();
+
+			System.out.print("Digite a quantidade de Desenvolvedores que você deseja: ");
+			quantidadeDesenvolvedores = utilidades.retornarQuantidadeDeDevs(espacoDisponivel);
+			Desenvolvedor.criarDesenvolvedores(quantidadeDesenvolvedores, dev, bugs);
+
+			Utilidades.mover(planetas, instantes);
+			Utilidades.show(planetas);
+
+			Bug.verificarEncontroComBugs(planetas, bugs, cova);
+			Desenvolvedor.verificarEncontroComDesenvolvedores(planetas, dev);
+
+			Calculos.infos(planetas, instantes);
+			
+			if (planetas.size() == 0) {
+				System.out.println("Todos os planetas explodiram !");
+				Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
+				System.out.println("\n\nFim de programa!");
+				break;
+			}
+
+
+		} while (opcao == 1);
+
+	}
+
+}

@@ -36,11 +36,8 @@ public abstract class Planetas implements Mover {
 		this.bugsCont = bugsCont;
 	}
 
-	public Planetas(int posicaoX, int posicaoY, int velocidade, double horas) {
-		this.posicao[0] = posicaoX;
-		this.posicao[1] = posicaoY;
-		this.velocidade = velocidade;
-		this.horas = horas;
+	public Planetas() {
+
 	}
 
 	public String getNome() {

@@ -6,43 +6,24 @@ public class Relatorio {
 
 	public static void relatorio(ArrayList<Planetas> planetas, ArrayList<CemiterioDePlanetas> cova, int instantes) {
 
-		System.out.println("-//-//-//-//- RELATÓRIO -//-//-//-//-\n\n");
+		System.out.println("\n-//-//-//-//- RELATÓRIO -//-//-//-//-\n\n");
 
 		System.out.println("-//-//-//-//- INSTANTES -//-//-//-//-");
 		System.out.println("A quantidade de instantes pedida pelo usuário foi de: " + instantes + " instantes.\n\n");
 
-		if (planetas.size() != 0) {
-			for (Planetas planeta : planetas) {
+		for (Planetas planeta : planetas) {
 
-				System.out.println("-//-//-//-//- " + planeta.getNome() + " -//-//-//-//-");
-				System.out.println("A quantidade de vezes que o planeta " + planeta.getNome()
-						+ " colidiu com um bug foi: " + planeta.getBugsCont());
-				System.out.println("A quantidade de vezes que o planeta " + planeta.getNome()
-						+ " colidiu com um desenvolvedor foi: " + planeta.getDevsCont());
-				System.out.println("A velocidade de rotação foi de : " + planeta.getHoras() + " horas por instante");
-				System.out.println("A quantidade de horas que se passaram no planeta " + planeta.getNome() + " foram "
-						+ (planeta.getHoras() * instantes));
-				System.out.println("A quantidade de anos que se passaram no planeta " + planeta.getNome() + " foram "
-						+ planeta.getAnos());
-				System.out.println("\n\n");
-			}
-		} else {
-
-			for (CemiterioDePlanetas mortos : cova) {
-				System.out.println("-//-//-//-//- " + mortos.getNome() + " -//-//-//-//-");
-				System.out.println("A quantidade de vezes que o planeta " + mortos.getNome()
-						+ " colidiu com um bug foi: " + mortos.getBugsCont());
-				System.out.println("A quantidade de vezes que o planeta " + mortos.getNome()
-						+ " colidiu com um desenvolvedor foi: " + mortos.getDevsCont());
-				System.out.println("A velocidade de rotação foi de : " + mortos.getHoras() + " horas por instante");
-				System.out.println("A quantidade de horas que se passaram no planeta " + mortos.getNome() + " foram "
-						+ (mortos.getHoras() * instantes));
-				System.out.println("A quantidade de anos que se passaram no planeta " + mortos.getNome() + " foram "
-						+ mortos.getAnos());
-				System.out.println("\n\n");
-
-			}
-
+			System.out.println("-//-//-//-//- " + planeta.getNome() + " -//-//-//-//-");
+			System.out.println("A quantidade de vezes que o planeta " + planeta.getNome() + " colidiu com um bug foi: "
+					+ planeta.getBugsCont());
+			System.out.println("A quantidade de vezes que o planeta " + planeta.getNome()
+					+ " colidiu com um desenvolvedor foi: " + planeta.getDevsCont());
+			System.out.println("A velocidade de rotação foi de : " + planeta.getHoras() + " horas por instante");
+			System.out.println("A quantidade de dias que se passaram no planeta " + planeta.getNome() + " foram "
+					+ Calculos.calculoDias(planeta, instantes) + " dia(s)");
+			System.out.println("A quantidade de anos que se passaram no planeta " + planeta.getNome() + " foram "
+					+ planeta.getAnos());
+			System.out.println("\n\n");
 		}
 
 		int size = cova.size();
@@ -78,15 +59,11 @@ public class Relatorio {
 		cSharp();
 		cPlusPlus();
 		c();
-	
-	
-		if(planetas.size()>2) {
+
+		if (planetas.size() > 2) {
 			Calculos.areaDeCobertura(planetas);
 		}
-	
-	
-	
-	
+
 	}
 
 	public static void python() {
@@ -156,6 +133,5 @@ public class Relatorio {
 				"Famosa por sua eficiência e portabilidade, ela serviu como base para o desenvolvimento de muitas outras linguagens e sistemas operacionais.");
 
 	}
-
 
 }

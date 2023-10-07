@@ -3,14 +3,15 @@ package JavaLar;
 public class PHP extends Planetas {
 
 
-	public PHP(int posicaoX, int posicaoY, int velocidade, double horas) {
-		super(8, 12, velocidade, horas);
+	public PHP() {
 
 		preencherOrbita();
-		setVelocidade(velocidade);
+		setVelocidade(2);
+		setHoras(60);
 		setPosicao(new int[] { 8, 12 });
 		setBugsCont(0);
 		setDevsCont(0);
+		setAnos(0);
 		setNome("PHP");
 	}
 

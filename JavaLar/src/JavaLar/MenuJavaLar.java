@@ -5,17 +5,17 @@ import java.util.ArrayList;
 public class MenuJavaLar {
 
 	private int opcao;
-	private int somatorioDeInstantes;
+	private boolean operador = true;
 
 	public MenuJavaLar() {
 
-		Planetas python = new Python(8, 9, 4, 24);
-		Planetas javaScript = new JavaScript(8, 10, 3, 10);
-		Planetas ROR = new RubyOnRails(8, 11, 2, 48);
-		Planetas php = new PHP(8, 12, 2, 60);
-		Planetas csharp = new CSharp(8, 13, 1, 4);
-		Planetas cplusplus = new CPlusPlus(8, 14, 2, 0.5);
-		Planetas c = new C(8, 15, 10, 0.1);
+		Planetas python = new Python();
+		Planetas javaScript = new JavaScript();
+		Planetas ROR = new RubyOnRails();
+		Planetas php = new PHP();
+		Planetas csharp = new CSharp();
+		Planetas cplusplus = new CPlusPlus();
+		Planetas c = new C();
 
 		ArrayList<Bug> bugs = new ArrayList<>();
 		ArrayList<Desenvolvedor> dev = new ArrayList<>();
@@ -32,37 +32,26 @@ public class MenuJavaLar {
 
 		Utilidades utilidades = new Utilidades();
 
-		MostrarMensagens.bemVindo();
-		opcao = utilidades.retornarOpcao();
-
-		switch (opcao) {
-
-		case 1:
-			opcao = 0;
-			somatorioDeInstantes = 0;
-
-			new Simulacao(opcao, planetas, utilidades, somatorioDeInstantes, bugs, dev, cova);
-
-			break;
-
-		case 2:
-			MostrarMensagens.mostrarInformacoes();
-
-			opcao = 0;
+		do {
+			MostrarMensagens.bemVindo();
 			opcao = utilidades.retornarOpcao();
 
-			new MostrarMensagens(opcao, utilidades);
+			if (opcao == 1) {
 
-			break;
+				new Simulacao(planetas, utilidades, bugs, dev, cova);
+				operador = false;
+			
+			} else if (opcao == 2) {
 
-		case 3:
+				new MostrarMensagens(utilidades);
 
-			System.out.println("Tchau! Até a próxima!");
+			} else if (opcao == 3) {
 
-			System.exit(0);
+				System.out.println("Tchauzinho! Até a próxima!");
+				operador = false;
+			}
 
-		}
+		} while (operador == true);
 
 	}
-
 }

@@ -3,14 +3,15 @@ package JavaLar;
 public class JavaScript extends Planetas {
 
 
-	public JavaScript(int posicaoX, int PosicaoY, int velocidade, double horas) {
-		super(8, 10, velocidade, horas);
+	public JavaScript() {
 
 		preencherOrbita();
-		setVelocidade(velocidade);
+		setVelocidade(3);
+		setHoras(10);
 		setPosicao(new int[] { 8, 10 });
 		setBugsCont(0);
 		setDevsCont(0);
+		setAnos(0);
 		setNome("JavaScript");
 	}
 

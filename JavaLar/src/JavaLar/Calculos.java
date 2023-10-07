@@ -47,7 +47,7 @@ public class Calculos {
 		int norte = 0;
 		int sul = 0;
 
-		System.out.println("-//-//-//-//- HEMISFÉRIOS -//-//-//-//-");
+		System.out.println("\n-//-//-//-//- HEMISFÉRIOS -//-//-//-//-");
 		
 		
 		for (Planetas planeta : planetas) {
@@ -324,6 +324,24 @@ public class Calculos {
 
 		return 0;
 	}
+	
+	
+	
+	
+	public static double calculoDias(Planetas planeta, int instantes) {
+		
+		double dias = planeta.getHoras() * instantes/ 24;
+		
+		if(dias<1) {
+			return 0;
+		}
+		
+		
+		return dias;
+	}
+	
+	
+	
 	
 
 	public static void areaDeCobertura (ArrayList <Planetas> planetas){

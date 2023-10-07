@@ -3,14 +3,15 @@ package JavaLar;
 public class CSharp extends Planetas {
 
 
-	public CSharp(int posicaoX, int posicaoY, int velocidade, double horas) {
-		super(posicaoX, posicaoY, velocidade, horas);
+	public CSharp() {
 
 		preencherOrbita();
-		setVelocidade(velocidade);
+		setVelocidade(1);
+		setHoras(4);
 		setPosicao(new int[] { 8, 13 });
 		setBugsCont(0);
 		setDevsCont(0);
+		setAnos(0);
 		setNome("C#");
 	}
 

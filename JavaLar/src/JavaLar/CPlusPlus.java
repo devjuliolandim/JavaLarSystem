@@ -5,14 +5,15 @@ public class CPlusPlus extends Planetas{
 
 	
 	
-	public CPlusPlus(int posicaoX, int posicaoY, int velocidade, double horas) {
-		super(posicaoX, posicaoY, velocidade, horas);
+	public CPlusPlus() {
 		
 		preencherOrbita();
-		setVelocidade(velocidade);
+		setVelocidade(2);
+		setHoras(0.5);
 		setPosicao(new int[] {8,14});
 		setBugsCont(0);
 		setDevsCont(0);
+		setAnos(0);
 		setNome("C++");
 	}
 

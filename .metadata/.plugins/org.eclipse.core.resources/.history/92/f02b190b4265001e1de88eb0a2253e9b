@@ -1,0 +1,76 @@
+package JavaLar;
+
+import java.util.ArrayList;
+
+public class MenuJavaLar {
+
+	private int opcao;
+
+	public MenuJavaLar() {
+
+		Planetas python = new Python();
+		Planetas javaScript = new JavaScript();
+		Planetas ROR = new RubyOnRails();
+		Planetas php = new PHP();
+		Planetas csharp = new CSharp();
+		Planetas cplusplus = new CPlusPlus();
+		Planetas c = new C();
+
+		ArrayList<Bug> bugs = new ArrayList<>();
+		ArrayList<Desenvolvedor> dev = new ArrayList<>();
+		ArrayList<Planetas> planetas = new ArrayList<>();
+		ArrayList<CemiterioDePlanetas> cova = new ArrayList<>();
+
+		planetas.add(python);
+		planetas.add(javaScript);
+		planetas.add(ROR);
+		planetas.add(php);
+		planetas.add(csharp);
+		planetas.add(cplusplus);
+		planetas.add(c);
+
+		Utilidades utilidades = new Utilidades();
+
+		MostrarMensagens.bemVindo();
+		opcao = utilidades.retornarOpcao();
+
+		if(opcao == 1) {
+			new Simulacao(planetas, utilidades, bugs, dev, cova);
+		}else if(opcao == 2) {
+			new MostrarMensagens(utilidades);
+		}
+		
+		
+		
+		
+		
+		
+		
+		//		switch (opcao) {
+//
+//		case 1:
+//
+//			new Simulacao(planetas, utilidades, bugs, dev, cova);
+//
+//			break;
+//
+//		case 2:
+//			MostrarMensagens.mostrarInformacoes();
+//
+//			opcao = 0;
+//			opcao = utilidades.retornarOpcao();
+//
+//			new MostrarMensagens(opcao, utilidades);
+//
+//			break;
+//
+//		case 3:
+//
+//			System.out.println("Tchau! Até a próxima!");
+//
+//			System.exit(0);
+//
+//		}
+
+	}
+}

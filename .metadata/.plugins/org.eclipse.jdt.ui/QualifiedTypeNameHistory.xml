@@ -11,9 +11,11 @@
     <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="JavaLar.CemiterioDePlanetas"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="JavaLar.Simulacao"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="JavaLar.MostrarMensagens"/>
     <fullyQualifiedTypeName name="JavaLar.BugsInterface"/>
     <fullyQualifiedTypeName name="JavaLar.DesenvolvedorInterface"/>
+    <fullyQualifiedTypeName name="JavaLar.PHP"/>
+    <fullyQualifiedTypeName name="JavaLar.Simulacao"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="JavaLar.MostrarMensagens"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

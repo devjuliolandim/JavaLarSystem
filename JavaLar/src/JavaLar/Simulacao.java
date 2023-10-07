@@ -10,21 +10,19 @@ public class Simulacao {
 	private int quantidadeBug = 0;
 	private int quantidadeDesenvolvedores = 0;
 	private int espacoDisponivel = 0;
-	private int quantidadeDePlanetasExistentes = 0;
-
-	public Simulacao(int opcao, ArrayList<Planetas> planetas, Utilidades utilidades, int somatorioDeInstantes,
-			ArrayList<Bug> bugs, ArrayList<Desenvolvedor> dev, ArrayList<CemiterioDePlanetas> cova) {
+	private int somatorioDeInstantes = 0;
+	private int opcao = 0;
+	
+	public Simulacao(ArrayList<Planetas> planetas, Utilidades utilidades, ArrayList<Bug> bugs, ArrayList<Desenvolvedor> dev, ArrayList<CemiterioDePlanetas> cova) {
 
 		scanner = new Scanner(System.in);
-
+		
 		do {
-			System.out.println("Digite os instantes:");
+			System.out.print("\nDigite os instantes: ");
 
 			instantes = utilidades.retornarInstantes();
 			somatorioDeInstantes += instantes;
 
-			quantidadeBug = 0;
-			quantidadeDesenvolvedores = 0;
 			espacoDisponivel = 224 - bugs.size() - dev.size();
 
 			System.out.print("Digite a quantidade de Bugs que você deseja: ");
@@ -33,7 +31,7 @@ public class Simulacao {
 
 			espacoDisponivel = 224 - bugs.size() - dev.size();
 
-			System.out.println("Digite a quantidade de Desenvolvedores que você deseja: ");
+			System.out.print("Digite a quantidade de Desenvolvedores que você deseja: ");
 			quantidadeDesenvolvedores = utilidades.retornarQuantidadeDeDevs(espacoDisponivel);
 			Desenvolvedor.criarDesenvolvedores(quantidadeDesenvolvedores, dev, bugs);
 
@@ -45,14 +43,6 @@ public class Simulacao {
 
 			Calculos.infos(planetas, instantes);
 			
-			quantidadeDePlanetasExistentes = planetas.size();
-			if (quantidadeDePlanetasExistentes == 0) {
-				System.out.println("Todos os planetas explodiram !");
-				Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
-				System.out.println("\n\nFim de programa!");
-				break;
-			}
-
 			System.out.println("\n\nDeseja continuar?");
 			System.out.println("1 - Sim!");
 			System.out.println("2 - Não!");
@@ -64,6 +54,15 @@ public class Simulacao {
 				System.out.println("\n\nFim de programa!");
 
 			}
+			
+			
+			if (planetas.size() == 0) {
+				System.out.println("Todos os planetas explodiram !");
+				Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
+				System.out.println("\n\nFim de simulação!");
+				break;
+			}
+
 
 		} while (opcao == 1);
 

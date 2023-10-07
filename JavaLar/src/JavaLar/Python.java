@@ -2,13 +2,12 @@ package JavaLar;
 
 public class Python extends Planetas {
 
-
-	public Python(int posicaoX, int posicaoY, int velocidade, double horas) {
-		super(posicaoX, posicaoY, velocidade, horas);
+	public Python() {
 
 		preencherOrbita();
-		
-		
+		setPosicao(new int[] {8,9});
+		setHoras(24);
+		setVelocidade(4);
 		setBugsCont(0);
 		setDevsCont(0);
 		setAnos(0);
@@ -29,38 +28,35 @@ public class Python extends Planetas {
 
 				x--;
 			} else if (i < 3) {
+				
 				y--;
-
 			} else if (i < 5) {
+				
 				x++;
-
 			} else if (i < 7) {
+				
 				y++;
 			} else {
+				
 				x--;
 			}
 
 		}
 	}
 
-
-
 	public void mover(int instantes) {
 
 		for (int i = 0; i < instantes; i++) {
 
-			
 			indicePosAtual = (indicePosAtual + getVelocidade()) % orbitaPermitida.length;
 			setPosicao(orbitaPermitida[indicePosAtual]);
-			
-			
-			if(getPosicaoX() == 8 && getPosicaoY() == 9) {
-				
+
+			if (getPosicaoX() == 8 && getPosicaoY() == 9) {
+
 				anos++;
-				
+
 			}
-			
-			
+
 		}
 
 	}

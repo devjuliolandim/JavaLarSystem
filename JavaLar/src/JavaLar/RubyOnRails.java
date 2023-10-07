@@ -3,14 +3,15 @@ package JavaLar;
 public class RubyOnRails extends Planetas {
 
 
-	public RubyOnRails(int posicaoX, int posicaoY, int velocidade, int horas) {
-		super(posicaoX, posicaoY, velocidade, horas);
+	public RubyOnRails() {
 
 		preencherOrbita();
-		setVelocidade(velocidade);
+		setVelocidade(2);
+		setHoras(48);
 		setPosicao(new int[] { 8, 11 });
 		setBugsCont(0);
 		setDevsCont(0);
+		setAnos(0);
 		setNome("Ruby on Rails");
 	}
 

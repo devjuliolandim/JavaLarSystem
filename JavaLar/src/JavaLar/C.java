@@ -2,13 +2,14 @@ package JavaLar;
 
 public class C extends Planetas {
 
-	public C(int posicaoX, int posicaoY, int velocidade, double horas) {
-		super(posicaoX, posicaoY, velocidade, horas);
+	public C() {
 
 		preencherOrbita();
-		setVelocidade(velocidade);
+		setVelocidade(10);
+		setHoras(0.1);
 		setPosicao(new int[] { 8, 15 });
 		setBugsCont(0);
+		setAnos(0);
 		setNome("C");
 	}
 
