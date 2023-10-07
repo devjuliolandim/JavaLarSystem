@@ -41,14 +41,6 @@ public class Simulacao {
 			Bug.verificarEncontroComBugs(planetas, bugs, cova);
 			Desenvolvedor.verificarEncontroComDesenvolvedores(planetas, dev);
 
-			if (planetas.size() == 0) {
-				System.out.println("Todos os planetas explodiram !");
-				Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
-				System.out.println("\n\nFim de simulação!");
-				break;
-			}
-
-			
 			Calculos.infos(planetas, instantes);
 			
 			System.out.println("\n\nDeseja continuar?");
@@ -64,7 +56,13 @@ public class Simulacao {
 			}
 			
 			
-			
+			if (planetas.size() == 0) {
+				System.out.println("Todos os planetas explodiram !");
+				Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
+				System.out.println("\n\nFim de simulação!");
+				break;
+			}
+
 
 		} while (opcao == 1);
 
