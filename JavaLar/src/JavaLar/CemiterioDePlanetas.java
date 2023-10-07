@@ -7,7 +7,6 @@ public class CemiterioDePlanetas extends Planetas {
 
 	public CemiterioDePlanetas(int posicaoX, int posicaoY, int velocidade, double horas) {
 		super(posicaoX, posicaoY, velocidade, horas);
-		
 	}
 
 	public String getNome() {

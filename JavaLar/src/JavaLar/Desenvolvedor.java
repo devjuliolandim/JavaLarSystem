@@ -3,7 +3,7 @@ package JavaLar;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Desenvolvedor extends OutrosPersonagens {
+public class Desenvolvedor extends OutrosPersonagens implements DesenvolvedorInterface {
 
 	public Desenvolvedor(int pX, int pY) {
 		super(pX, pY);
@@ -45,7 +45,7 @@ public class Desenvolvedor extends OutrosPersonagens {
 
 		ArrayList<Desenvolvedor> removerDev = new ArrayList<>();
 		
-		
+		System.out.println("\n");
 		for (Planetas planeta : planetas) {
 			int velocidade = planeta.getVelocidade();
 			int devsCont = planeta.getDevsCont();

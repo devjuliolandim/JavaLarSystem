@@ -4,12 +4,18 @@ public class MostrarMensagens {
 
 	public static void bemVindo() {
 
-		System.out.println("Bem-vindo à Sistema JavaLar!!");
+		System.out.println("Bem-vindo ao Sistema JavaLar!!");
 		System.out.println("Digite um número correspondente à uma ação!");
 		System.out.println("1 - Iniciar");
 		System.out.println("2 - Informações");
 		System.out.println("3 - Sair");
 
+	}
+	
+	public static void mostrarOQueSaoLinguagensDeProgramacao() {
+		
+		System.out.println("Linguagens de programação são sistemas formais usados por programadores para criar programas de computador.\nElas definem regras de escrita e significado para instruções que controlam o comportamento de máquinas, permitindo a comunicação entre humanos e computadores.\nExistem muitas linguagens diferentes, cada uma com seus propósitos e características, e elas são essenciais para desenvolver software e sistemas de computador.");
+		
 	}
 
 	public MostrarMensagens(int opcao, Utilidades utilidades) {
@@ -18,7 +24,7 @@ public class MostrarMensagens {
 			if (opcao == 1) {
 				comoFuncionaOSistema();
 			} else if (opcao == 2) {
-
+				mostrarOQueSaoLinguagensDeProgramacao();
 			} else if (opcao == 3) {
 				continue;
 			}

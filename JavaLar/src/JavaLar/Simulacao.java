@@ -11,11 +11,12 @@ public class Simulacao {
 	private int quantidadeDesenvolvedores = 0;
 	private int espacoDisponivel = 0;
 	private int quantidadeDePlanetasExistentes = 0;
-	
-	public Simulacao(int opcao, ArrayList<Planetas> planetas, Utilidades utilidades, int somatorioDeInstantes, ArrayList<Bug> bugs, ArrayList<Desenvolvedor> dev, ArrayList<CemiterioDePlanetas> cova)  {
-		
+
+	public Simulacao(int opcao, ArrayList<Planetas> planetas, Utilidades utilidades, int somatorioDeInstantes,
+			ArrayList<Bug> bugs, ArrayList<Desenvolvedor> dev, ArrayList<CemiterioDePlanetas> cova) {
+
 		scanner = new Scanner(System.in);
-		
+
 		do {
 			System.out.println("Digite os instantes:");
 
@@ -42,8 +43,8 @@ public class Simulacao {
 			Bug.verificarEncontroComBugs(planetas, bugs, cova);
 			Desenvolvedor.verificarEncontroComDesenvolvedores(planetas, dev);
 
-			//Calculos.infos(planetas, instantes);
-
+			Calculos.infos(planetas, instantes);
+			
 			quantidadeDePlanetasExistentes = planetas.size();
 			if (quantidadeDePlanetasExistentes == 0) {
 				System.out.println("Todos os planetas explodiram !");
@@ -61,18 +62,11 @@ public class Simulacao {
 			if (opcao == 2) {
 				Relatorio.relatorio(planetas, cova, somatorioDeInstantes);
 				System.out.println("\n\nFim de programa!");
-				
+
 			}
 
 		} while (opcao == 1);
 
-		
-		
-		
 	}
-	
-	
-}
-	
-	
 
+}

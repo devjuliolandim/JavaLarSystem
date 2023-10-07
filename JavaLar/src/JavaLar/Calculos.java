@@ -4,8 +4,11 @@ import java.util.ArrayList;
 
 public class Calculos {
 
+
 	public static void infos(ArrayList<Planetas> planetas, int instantes) {
-		System.out.println("\n");
+		
+		hemisferios(planetas);
+		
 		for (Planetas planeta : planetas) {
 			System.out.println("-//-//-//-//- " + planeta.getNome() + " -//-//-//-//-");
 			velocidadeTranslacao(planeta);
@@ -18,9 +21,9 @@ public class Calculos {
 
 		System.out.println("-//-//-//-//- ALINHAMENTOS -//-//-//-//-//-");
 		if (diagonais(planetas) == true) {
-			diagonais(planetas);
+		
 		} else if (norteSul(planetas) == true) {
-			norteSul(planetas);
+		
 		} else {
 			System.out.println("Não há nenhum alinhamento em relação a Java");
 		}
@@ -34,7 +37,6 @@ public class Calculos {
 				+ planeta.getVelocidade() + " unidades por instante");
 	}
 
-	
 	public static void quantosDias(Planetas planeta, int instantes) {
 		System.out.println("Passaram-se " + planeta.getHoras() * instantes + " horas no planeta " + planeta.getNome());
 
@@ -45,6 +47,9 @@ public class Calculos {
 		int norte = 0;
 		int sul = 0;
 
+		System.out.println("-//-//-//-//- HEMISFÉRIOS -//-//-//-//-");
+		
+		
 		for (Planetas planeta : planetas) {
 			if (planeta.getPosicaoY() > 8) {
 				norte++;
@@ -65,6 +70,14 @@ public class Calculos {
 
 			System.out.println("Existem " + sul + " planetas abaixo de Java!");
 		}
+		
+		if(norte == 0 && sul == 0) {
+			
+			System.out.println("Todos os planetas estão na mesma coordenada 'Y' de Java!");
+		}
+		
+		
+		System.out.println("-//-//-//-//-//-//-//-//-//-//-//-//-//-\n\n");
 
 	}
 
@@ -90,17 +103,14 @@ public class Calculos {
 	public static double calcularArea(Planetas planeta1, Planetas planeta2) {
 		double altura = Math.abs(planeta2.getPosicaoY() - planeta1.getPosicaoY());
 		double base = Math.abs(planeta2.getPosicaoX() - planeta1.getPosicaoX());
-		
-		if(altura == 0) {
+
+		if (altura == 0) {
 			altura = 1;
-		}else if(base == 0) {
+		} else if (base == 0) {
 			base = 1;
-			
+
 		}
-		
-		
-		
-		
+
 		double area = base * altura;
 
 		return area;
@@ -144,15 +154,17 @@ public class Calculos {
 
 	public static boolean norteSul(ArrayList<Planetas> planetas) {
 
-		int i = alinhamentoNorteSul(planetas);
+		int alinhamento = alinhamentoNorteSul(planetas);
 
-		if (i == 1) {
+		if (alinhamento == 1) {
 
 			System.out.println("Há alinhamento ao norte de Java");
+
 			return true;
-		} else if (i == 2) {
+		} else if (alinhamento == 2) {
 
 			System.out.println("Há alinhamento ao sul de Java");
+
 			return true;
 		} else {
 
@@ -189,7 +201,7 @@ public class Calculos {
 			if (i + 1 < planetas.size()) {
 				Planetas proximoPlaneta = planetas.get(i + 1);
 
-				if (planetas.get(i).getPosicaoY() == (proximoPlaneta.getPosicaoY() + 1)) {
+				if (planetas.get(i).getPosicaoY() == (proximoPlaneta.getPosicaoY() - 1)) {
 
 					verify++;
 				}
@@ -200,7 +212,7 @@ public class Calculos {
 
 		if (verify == 6) {
 
-			return 1; // 1 = Alinhamento ao norte de Java
+			return 1; 
 		}
 
 		verify = 0;
@@ -211,7 +223,7 @@ public class Calculos {
 
 				Planetas proximoPlaneta = planetas.get(i + 1);
 
-				if (planetas.get(i).getPosicaoY() == (proximoPlaneta.getPosicaoY() - 1)) {
+				if (planetas.get(i).getPosicaoY() == (proximoPlaneta.getPosicaoY() + 1)) {
 
 					verify++;
 				}
@@ -221,7 +233,7 @@ public class Calculos {
 
 		if (verify == 6) {
 
-			return 2;
+			return 2; 
 		}
 
 		return 0;
@@ -312,5 +324,32 @@ public class Calculos {
 
 		return 0;
 	}
+	
 
+	public static void areaDeCobertura (ArrayList <Planetas> planetas){
+				
+		System.out.println("\n\n-//-//-//-//- ÁREA DE COBERTURA -//-//-//-//-");
+		int numeroDePlanetas = planetas.size();
+		double area = 0;
+		
+		for(int i = 0; i < numeroDePlanetas; i++) {
+			Planetas pontosAtuais = planetas.get(i);
+			Planetas pontosFuturos = planetas.get((i+1) % numeroDePlanetas);
+			
+			int x1 = pontosAtuais.getPosicaoX();
+			int y1 = pontosAtuais.getPosicaoY();
+			int x2 = pontosFuturos.getPosicaoX();
+			int y2 = pontosFuturos.getPosicaoY();
+			
+			
+			area += (x1 * y2) - (x2 * y1);
+			
+		}
+	
+		area = 0.5 * Math.abs(area);
+		
+		System.out.println("-> A área de cobertura é de " + area + " Jm²");
+	
+	}	
+	
 }

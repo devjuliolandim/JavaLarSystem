@@ -3,7 +3,7 @@ package JavaLar;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Bug extends OutrosPersonagens {
+public class Bug extends OutrosPersonagens implements BugsInterface {
 
 	
 	public Bug(int pX, int pY) {
@@ -65,6 +65,7 @@ public class Bug extends OutrosPersonagens {
 				removerPlaneta.add(planeta);
 
 				CemiterioDePlanetas planetaMorto = new CemiterioDePlanetas(planeta.getPosicaoX(), planeta.getPosicaoY(), planeta.getVelocidade(), planeta.getHoras());
+				planetaMorto.setNome(planeta.getNome());
 				cova.add(planetaMorto);
 			}
 
@@ -72,7 +73,7 @@ public class Bug extends OutrosPersonagens {
 
 		System.out.println("\n");
 		for (Planetas planeta : removerPlaneta) {
-			System.out.println("O planeta " + planeta.getNome() + " explodiu!");
+			System.out.println("-> O planeta " + planeta.getNome() + " explodiu!");
 		}
 
 		planetas.removeAll(removerPlaneta);
