@@ -27,7 +27,7 @@ public class Simulacao {
 
 			System.out.print("Digite a quantidade de Bugs que você deseja: ");
 			quantidadeBug = utilidades.retornarQuantidadeDeBugs(espacoDisponivel);
-			Bug.criarBugs(quantidadeBug, bugs, dev);
+			Bug.criarBugs(quantidadeBug, bugs, dev, planetas);
 
 			espacoDisponivel = 224 - bugs.size() - dev.size();
 

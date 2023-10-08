@@ -60,6 +60,14 @@ public class Utilidades {
 
 	}
 
+	public static void comoFuncionaOSistema() {
+
+	}
+
+	public static void informacoes() {
+
+	}
+
 	public static void mover(ArrayList<Planetas> planetas, int instantes) {
 		for(Planetas planeta : planetas) {
 			planeta.mover(instantes);
