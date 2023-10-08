@@ -50,4 +50,8 @@ public class C extends Planetas {
 		
 	}
 
+	public void mover(int instantes) {
+
+	}
+
 }

@@ -11,8 +11,6 @@ public class C extends Planetas {
 		setBugsCont(0);
 		setAnos(0);
 		setNome("C");
-		setxInicial(8);
-		setyInicial(15);
 	}
 
 	public void preencherOrbita() {
@@ -48,6 +46,23 @@ public class C extends Planetas {
 			
 		}
 		
+	}
+
+	public void mover(int instantes) {
+
+		for (int i = 0; i < instantes; i++) {
+			indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
+			setPosicao(orbitaPermitida[indicePosAtual]);
+		
+			if(getPosicaoX() == 8 && getPosicaoY() == 15) {
+				
+				anos++;
+				
+			}
+		
+		
+		
+		}
 	}
 
 }

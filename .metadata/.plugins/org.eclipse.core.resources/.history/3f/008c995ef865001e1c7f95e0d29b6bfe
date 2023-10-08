@@ -31,7 +31,7 @@ public abstract class Planetas implements Mover {
 		this.indicePosAtual = indicePosAtual;
 	}
 
-	public int getXInicial() {
+	public int getxInicial() {
 		return xInicial;
 	}
 
@@ -39,7 +39,7 @@ public abstract class Planetas implements Mover {
 		this.xInicial = xInicial;
 	}
 
-	public int getYInicial() {
+	public int getyInicial() {
 		return yInicial;
 	}
 
@@ -123,10 +123,7 @@ public abstract class Planetas implements Mover {
 			setPosicao(orbitaPermitida[indicePosAtual]);
 			
 			
-			if(getPosicaoX() == getXInicial() && getPosicaoY() == getYInicial() ) {
-				
-				anos++;
-			}
+			
 			
 		}
 		

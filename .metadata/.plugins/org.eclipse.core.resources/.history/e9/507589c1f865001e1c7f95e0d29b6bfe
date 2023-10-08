@@ -13,9 +13,6 @@ public class RubyOnRails extends Planetas {
 		setDevsCont(0);
 		setAnos(0);
 		setNome("Ruby on Rails");
-		setxInicial(8);
-		setyInicial(11);
-		
 	}
 
 	public void preencherOrbita() {
@@ -46,6 +43,26 @@ public class RubyOnRails extends Planetas {
 				x--;
 			}
 
+		}
+
+	}
+
+	public void mover(int instantes) {
+
+		for (int i = 0; i < instantes; i++) {
+
+			indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
+			setPosicao(orbitaPermitida[indicePosAtual]);
+
+			
+			if(getPosicaoX() == 8 && getPosicaoY() == 11) {
+				
+				anos++;
+				
+			}
+			
+			
+			
 		}
 
 	}

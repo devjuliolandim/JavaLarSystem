@@ -15,38 +15,6 @@ public abstract class Planetas implements Mover {
 	protected int yInicial;
 	
 	
-	public int[][] getOrbitaPermitida() {
-		return orbitaPermitida;
-	}
-
-	public void setOrbitaPermitida(int[][] orbitaPermitida) {
-		this.orbitaPermitida = orbitaPermitida;
-	}
-
-	public int getIndicePosAtual() {
-		return indicePosAtual;
-	}
-
-	public void setIndicePosAtual(int indicePosAtual) {
-		this.indicePosAtual = indicePosAtual;
-	}
-
-	public int getXInicial() {
-		return xInicial;
-	}
-
-	public void setxInicial(int xInicial) {
-		this.xInicial = xInicial;
-	}
-
-	public int getYInicial() {
-		return yInicial;
-	}
-
-	public void setyInicial(int yInicial) {
-		this.yInicial = yInicial;
-	}
-
 	public int getAnos() {
 		return anos;
 	}
@@ -123,10 +91,7 @@ public abstract class Planetas implements Mover {
 			setPosicao(orbitaPermitida[indicePosAtual]);
 			
 			
-			if(getPosicaoX() == getXInicial() && getPosicaoY() == getYInicial() ) {
-				
-				anos++;
-			}
+			
 			
 		}
 		

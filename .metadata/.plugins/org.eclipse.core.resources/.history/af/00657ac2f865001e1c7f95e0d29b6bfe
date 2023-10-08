@@ -46,4 +46,21 @@ public class Python extends Planetas {
 		}
 	}
 
+	public void mover(int instantes) {
+
+		for (int i = 0; i < instantes; i++) {
+
+			indicePosAtual = (indicePosAtual + getVelocidade()) % orbitaPermitida.length;
+			setPosicao(orbitaPermitida[indicePosAtual]);
+
+			if (getPosicaoX() == 8 && getPosicaoY() == 9) {
+
+				anos++;
+
+			}
+
+		}
+
+	}
+
 }

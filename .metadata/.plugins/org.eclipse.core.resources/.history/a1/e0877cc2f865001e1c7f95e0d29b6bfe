@@ -13,8 +13,6 @@ public class JavaScript extends Planetas {
 		setDevsCont(0);
 		setAnos(0);
 		setNome("JavaScript");
-		setxInicial(8);
-		setyInicial(10);
 	}
 
 	public void preencherOrbita() {
@@ -53,6 +51,22 @@ public class JavaScript extends Planetas {
 
 	}
 
+	public void mover(int instantes) {
 
+		for (int i = 0; i < instantes; i++) {
+
+			indicePosAtual = (indicePosAtual + velocidade) % orbitaPermitida.length;
+			setPosicao(orbitaPermitida[indicePosAtual]);
+			
+			
+			if(getPosicaoX() == 8 && getPosicaoY() == 10) {
+				
+				anos++;
+				
+			}
+
+		}
+
+	}
 
 }

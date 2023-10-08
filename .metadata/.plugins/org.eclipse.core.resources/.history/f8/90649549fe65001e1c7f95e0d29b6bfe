@@ -62,7 +62,7 @@ public class Bug extends OutrosPersonagens implements BugsInterface {
 
 			if (planeta.getVelocidade() == 0) {
 				removerPlaneta.add(planeta);
-					
+
 				CemiterioDePlanetas planetaMorto = new CemiterioDePlanetas();
 				planetaMorto.setNome(planeta.getNome());
 				cova.add(planetaMorto);
